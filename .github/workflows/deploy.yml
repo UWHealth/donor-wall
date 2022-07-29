@@ -25,6 +25,17 @@ jobs:
         with:
           node-version: 16
 
+      - name: create env file
+        run: |
+          touch .env
+          echo ENGINE_API_KEY=${{ secrets.ENGINE_API_KEY }} >> .env
+          echo CONTENTFUL_ENV= ${{ secrets.CONTENTFUL_ENV }} >> .env
+          echo CONTENTFUL_HOST=${{ secrets.CONTENTFUL_HOST }} >> .env
+          echo CONTENTFUL_ACCESSTOKEN=${{ secrets.CONTENTFUL_ACCESSTOKEN }} >> .env
+          echo CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }} >> .env
+          echo CONTENTFUL_CONTENT_TYPE=${{ secrets.CONTENTFUL_CONTENT_TYPE }} >> .env
+          echo CONTENT_OUT_PATH=${{ secrets.CONTENT_OUT_PATH }} >> .env
+
       - name: Install dependencies
         run: npm ci
         env:
