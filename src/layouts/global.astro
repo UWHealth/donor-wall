@@ -1,0 +1,30 @@
+---
+import '$styles/global.scss';
+import fonts from '$styles/_fonts.scss';
+const { title, classes } = Astro.props;
+
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+		<style>
+			main {
+				max-width: 1080px;
+				margin: 0 auto;
+				display: flex;
+				width: 100%;
+				place-items: center;
+				place-content: center;
+			}
+		</style>
+    <style is:inline>{fonts}</style>
+	</head>
+	<body>
+		<main class={classes}>
+      <slot/>
+    </main>
+  </body>
+</html>

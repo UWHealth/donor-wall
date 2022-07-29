@@ -1,0 +1,104 @@
+// @import url("https://use.typekit.net/saq6crj.css");
+
+@import '_functions.scss';
+@import '_reset.scss';
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Proxima Nova', 'proxima-nova';
+  font-size: clamp(5px, calc(5px + #{strip($base - 5px)} * ( (100vw - 250px) / #{strip(2000px - 250px)}) ), #{$base});
+  font-weight: 400;
+
+  color: #4b5155;
+  background-color: #242424;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'proxima-nova';
+  font-size: 1rem;
+  color: #4b5155;
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit !important;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+
+@keyframes grow {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.5);
+  }
+}
+
+@keyframes shrink-in {
+  100% { transform: scale(1) }
+}
+
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+      opacity: 0.01;
+  }
+  100% {
+      opacity: 0.1;
+  }
+}
+
+@keyframes grow-return {
+  0% { transform: scale(.99) }
+  5% { transform: scale(1.05) }
+  90% { transform: scale(1.6) }
+}
+
+@keyframes fade-return {
+  0% { opacity: 0 }
+  5% { opacity: 0 }
+  15% { opacity: .5 }
+  50% { opacity: 1 }
+  70% { opacity: 0.4 }
+  90% { opacity: 0 }
+  100% { opacity: 0 }
+}
+
+@keyframes fade-fly-in {
+  0% {
+    opacity: 0;
+    transform: translateY(#{space(3)});
+  }
+  50% {
+    opacity: .6;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

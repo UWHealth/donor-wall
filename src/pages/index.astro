@@ -1,0 +1,16 @@
+---
+// Component Imports
+import ArticleView from "../components/ArticleView.svelte";
+import Layout from '../layouts/global.astro';
+import '$styles/global.scss';
+import stories from '$assets/content/stories.json';
+
+const story = stories.items[0];
+const {name, title, intro, body, url} = story;
+const [firstName, lastName] = name[0].split(' ');
+
+---
+
+<Layout title={"Donor Wall"}>
+  <ArticleView client:load firstName={firstName} lastName={lastName} title={title} story={intro + body}/>
+</Layout>
