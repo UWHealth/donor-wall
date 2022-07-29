@@ -8,7 +8,7 @@ import * as url from 'node:url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const ROOT_DIR = path.resolve(__dirname, '../');
 
-const OUT_PATH = process.env.CONTENT_OUT_DIR ? path.resolve(ROOT_DIR, process.env.CONTENT_OUT_DIR) : path.resolve(ROOT_DIR, './src/assets/content/stories.json');
+const OUT_PATH = process.env.CONTENT_OUT_PATH ? path.resolve(ROOT_DIR, process.env.CONTENT_OUT_PATH) : path.resolve(ROOT_DIR, './src/assets/content/stories.json');
 const QR_DIR = path.resolve(OUT_PATH, './qr-codes');
 
 /**
