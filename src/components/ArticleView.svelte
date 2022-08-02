@@ -127,8 +127,16 @@
     letter-spacing: 0.02em;
     padding-top: space(3);
     height: 100%;
-    clip-path: polygon(-5rem 0, 100% 0, 100% 33rem, -5rem 33rem);
     animation: fade-in calc(var(--animation-length) * .5) calc(var(--animation-length) * .75) ease-out normal both;
+  }
+
+  .story__content:after {
+    position:absolute;
+    bottom: 0;
+    content:'';
+    width: 100%;
+    height: space(18);
+    background-color: white;
   }
 
   .story__content :global(a),
