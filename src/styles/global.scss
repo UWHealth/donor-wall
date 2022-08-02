@@ -8,8 +8,8 @@
 }
 
 :root {
-  font-family: 'Proxima Nova', 'proxima-nova';
-  font-size: clamp(5px, calc(5px + #{strip($base - 5px)} * ( (100vw - 250px) / #{strip(2000px - 250px)}) ), #{$base});
+  font-family: 'proxima-nova';
+  font-size: clamp(5px, calc(5px + #{strip($base - 5px)} * ( (100vw - 250px) / #{strip(1260px - 250px)}) ), #{$base});
   font-weight: 400;
 
   color: #4b5155;

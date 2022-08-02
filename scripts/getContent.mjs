@@ -28,17 +28,19 @@ const pruneContentfulResponse = (data) => {
 
     const { slug, pageTitle, patientName, bynderIntroMedia, introCopy, contentBody } = entry.fields;
     const url = 'https://www.uwhealth.org/patient-stories/' + slug;
-    // const qrcodePath = `${QR_DIR}/${slug}.svg`;
 
-    // QRCode.toFile(qrcodePath, url, (err) => { if (err) console.error(err) })
     const story = introCopy ? documentToHtmlString(introCopy) + documentToHtmlString(contentBody) : documentToHtmlString(contentBody);
+    const image = parseImage(bynderIntroMedia).replace('http://', 'https://');
+
+    // const qrcodePath = `${QR_DIR}/${slug}.svg`;
+    // QRCode.toFile(qrcodePath, url, (err) => { if (err) console.error(err) })
 
     return {
       title: pageTitle,
       name: patientName,
       position: i,
       id: slug || i,
-      image: parseImage(bynderIntroMedia),
+      image,
       story,
       url,
       // qrcodeUrl:path.relative('../public/', qrcodePath),

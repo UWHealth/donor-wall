@@ -1,6 +1,6 @@
 ---
 import '$styles/global.scss';
-import Fonts from './fonts.astro';
+import '$styles/fonts.css';
 
 const { title, classes } = Astro.props;
 
@@ -11,7 +11,6 @@ const { title, classes } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>{title}</title>
-    <Fonts/>
 		<style>
 			main {
 				/* max-width: 1080px; */
