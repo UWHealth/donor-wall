@@ -31,6 +31,7 @@ const pruneContentfulResponse = (data) => {
     // const qrcodePath = `${QR_DIR}/${slug}.svg`;
 
     // QRCode.toFile(qrcodePath, url, (err) => { if (err) console.error(err) })
+    const story = introCopy ? documentToHtmlString(introCopy) + documentToHtmlString(contentBody) : documentToHtmlString(contentBody);
 
     return {
       title: pageTitle,
@@ -38,14 +39,14 @@ const pruneContentfulResponse = (data) => {
       position: i,
       id: slug || i,
       image: parseImage(bynderIntroMedia),
-      intro: documentToHtmlString(introCopy),
-      body: documentToHtmlString(contentBody),
+      story,
       url,
       // qrcodeUrl:path.relative('../public/', qrcodePath),
     }
   });
 
   data.items = updatedItems;
+  delete data.includes;
 
   return data;
 }

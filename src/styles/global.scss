@@ -28,11 +28,6 @@ body {
   min-height: 100vh;
 }
 
-a {
-  text-decoration: none;
-  color: inherit !important;
-}
-
 strong {
   font-weight: bold;
 }
@@ -76,7 +71,7 @@ em {
 @keyframes grow-return {
   0% { transform: scale(.99) }
   5% { transform: scale(1.05) }
-  90% { transform: scale(1.6) }
+  90% { transform: scale(1.8) }
 }
 
 @keyframes fade-return {

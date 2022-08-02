@@ -13,7 +13,11 @@ if (
   !process.env.CONTENTFUL_SPACE_ID ||
   !process.env.CONTENTFUL_HOST
 ) {
-  throw Error('Missing environment variable');
+  throw Error('Missing environment variable', {
+    CONTENTFUL_ACCESSTOKEN: process.env.CONTENTFUL_ACCESSTOKEN,
+    CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
+    CONTENTFUL_HOST: process.env.CONTENTFUL_HOST,
+  });
 }
 
 const client = contentful.createClient({
