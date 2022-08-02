@@ -1,6 +1,7 @@
 # build output
 dist/
-assets/content/
+assets/content/*
+public/content/*
 
 # dependencies
 node_modules/
