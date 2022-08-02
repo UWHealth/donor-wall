@@ -1,0 +1,20 @@
+---
+import Layout from '$layouts/global.astro';
+import ArticleView from '../../components/ArticleView.svelte';
+
+const { firstName, title, lastName, intro, body, image, organ, year } = Astro.props;
+const story = intro ? intro + body : body;
+---
+
+<Layout title={"Article: " + firstName + lastName }>
+  <ArticleView
+    client:load
+    firstName={firstName}
+    lastName={lastName}
+    organ={organ}
+    year={year}
+    image={image}
+    title={title}
+    story={story}
+  />
+</Layout>

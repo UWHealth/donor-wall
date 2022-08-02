@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
-  import colors from './utils/colors.js';
+  import { createColors, colorSet } from './utils/colors.js';
+  import arrayRotate from './utils/arrayRotate.js';
   import state from './utils/state.js';
 
   import NameCircle from './NameCircle.svelte';
@@ -10,17 +11,24 @@
   export let lastName;
   export let year;
 
+  let colors = createColors({
+    duration: 90000,
+    topColors: arrayRotate([...colorSet], -1),
+    bottomColors: arrayRotate([...colorSet], 0)
+  });
+
   $: {
     firstName = $state.firstName || firstName;
     lastName = $state.lastName || lastName;
     year = $state.year || year;
   }
 
-  onMount(()=>{
+  onMount(()=> {
     state.set({ firstName, lastName, year });
     window.SET_STATE = state.set;
     window.GET_STATE = state.get;
-  })
+    window.COLORS = colors.get;
+  });
 </script>
 
 <svelte:head>

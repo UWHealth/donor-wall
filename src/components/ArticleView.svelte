@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
+  import defaultImage from '$assets/article-default.jpg';
   import StoryMeta from './StoryMeta.svelte';
   import Footer from './Footer.svelte';
   import colors from "./utils/colors";
@@ -13,7 +14,7 @@
   export let organ = '';
   export let date = '';
   export let story = '';
-  export let image = 'https://picsum.photos/1920/1080';
+  export let image = defaultImage;
 
   $: {
     title = $state.title || title;
@@ -28,6 +29,7 @@
   onMount(()=>{
     window.SET_STATE = state.set;
     window.GET_STATE = state.get;
+    window.COLORS = colors.get;
   });
 </script>
 
@@ -48,7 +50,7 @@
 		<div id="Content" class="row">
 
       <StoryMeta class="meta" {firstName} {lastName} {year} {...$colors} {organ} {date}>
-        {title}
+        {#if title}{title}{/if}
       </StoryMeta>
 
 			<section id="Story" class="story__content" transition:fade>
@@ -127,6 +129,12 @@
     height: 100%;
     clip-path: polygon(-5rem 0, 100% 0, 100% 33rem, -5rem 33rem);
     animation: fade-in calc(var(--animation-length) * .5) calc(var(--animation-length) * .75) ease-out normal both;
+  }
+
+  .story__content :global(a),
+  .story__content :global(a:any-link) {
+    color: inherit;
+    text-decoration: none;
   }
 
   .story__content :global(p:first-child:first-letter) {

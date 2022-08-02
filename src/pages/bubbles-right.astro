@@ -1,0 +1,66 @@
+---
+import '$styles/bubble.css';
+import Layout from '$layouts/global.astro';
+import { colorSet } from '$components/utils/colors';
+
+const topColor = colorSet.at(4);
+const bottomColor = colorSet.at(6);
+
+---
+<Layout title={"Bubbles (right) view"}>
+  <article id="root" class="p-0" style={"--top-color:"+{topColor}+";--bottom-color:"+{bottomColor}+";"}>
+    <div class="bubble-panel" style="--gradient-angle: 40deg;">
+      <div class="bubble-container" style="color: black; top: 168px; left: 167px; width:335px; height:335px"><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Barb</div>
+        <div class="lastname" style="font-size: 47.101265px;">Degenhardt</div>
+        <div class="year" >2016</div></div></div><div class="bubble-container" style="color: black; top: 504px; left: 669px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Leana</div>
+        <div class="lastname" style="font-size: 61px;" >Davison</div>
+        <div class="year" >2020</div></div></div><div class="bubble-container" style="color: black; top: 672px; left: 1338px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Elizabeth</div>
+        <div class="lastname" style="font-size: 61px;" >Davis</div>
+        <div class="year" >2011</div></div></div><div class="bubble-container" style="color: black; top: 336px; left: 1673px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Vernon</div>
+        <div class="lastname" style="font-size: 61px;" >Degner III</div>
+        <div class="year" >2010</div></div></div><div class="bubble-container" style="color: black; top: 840px; left: 167px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Thomas</div>
+        <div class="lastname" style="font-size: 61px;" >Decoster</div>
+        <div class="year" >1969</div></div></div><div class="bubble-container" style="color: black; top: 1176px; left: 669px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Natasha</div>
+        <div class="lastname" style="font-size: 61px;" >Day</div>
+        <div class="year" >2020</div></div></div><div class="bubble-container" style="color: black; top: 1176px; left: 1505px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Kathleen</div>
+        <div class="lastname" style="font-size: 61px;" >Davis-Hart</div>
+        <div class="year" >1981</div></div></div><div class="bubble-container" style="color: black; top: 1680px; left: 335px; width:335px; height:335px" ><div class="bubble-data fadeout" ><div class="firstname" style="letter-spacing: 0.5em;" >Autumn</div>
+        <div class="lastname" style="font-size: 61px;" >Day</div>
+        <div class="year" >2022</div></div></div><div class="bubble-container" style="color: black; top: 1680px; left: 1171px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Kenneth</div>
+        <div class="lastname" style="font-size: 61px;" >Deakins</div>
+        <div class="year" >2005</div></div></div><div class="bubble-container" style="color: black; top: 2184px; left: 251px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Dave</div>
+        <div class="lastname" style="font-size: 61px;" >Davis</div>
+        <div class="year" >2018</div></div></div><div class="bubble-container" style="color: black; top: 2184px; left: 920px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Kerri</div>
+        <div class="lastname" style="font-size: 60.405846px;" >Defranza</div>
+        <div class="year" >2020</div></div></div><div class="bubble-container" style="color: black; top: 2016px; left: 1756px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Austin</div>
+        <div class="lastname" style="font-size: 61px;" >Decamp</div>
+        <div class="year" >2013</div></div></div><div class="bubble-container" style="color: black; top: 2856px; left: 167px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Larry</div>
+        <div class="lastname" style="font-size: 47.101265px;" >Degenhardt</div>
+        <div class="year" >2011</div></div></div><div class="bubble-container" style="color: black; top: 2688px; left: 1087px; width:335px; height:335px" ><div class="bubble-data fadeout" ><div class="firstname" style="letter-spacing: 0.5em;" >Manessa</div>
+        <div class="lastname" style="font-size: 61px;" >Davis</div>
+        <div class="year" >2003</div></div></div><div class="bubble-container" style="color: black; top: 2856px; left: 1756px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >John</div>
+        <div class="lastname" style="font-size: 61px;" >Davis</div>
+        <div class="year" >2015</div></div></div><div class="bubble-container" style="color: black; top: 3192px; left: 585px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Gail</div>
+        <div class="lastname" style="font-size: 61px;" >Degler</div>
+        <div class="year" >1999</div></div></div><div class="bubble-container" style="color: black; top: 3360px; left: 1254px; width:335px; height:335px" ><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Deborah</div>
+        <div class="lastname" style="font-size: 61px;" >Debow</div>
+        <div class="year" >2003</div></div></div>
+      </div>
+  </article>
+
+  <script type="module">
+    import arrayRotate from '/src/components/utils/arrayRotate.js';
+    import setColors from '/src/components/utils/setColors.js';
+    import { colorSet } from '/src/components/utils/colors.js';
+
+    const topColors = arrayRotate([...colorSet], 4);
+    const bottomColors = arrayRotate([...colorSet], 6);
+
+    setColors(document.querySelector('#root'), 140000, topColors, bottomColors);
+
+  </script>
+</Layout>
+
+<style lang="scss">
+  @import '/src/styles/_bubbles.scss';
+</style>

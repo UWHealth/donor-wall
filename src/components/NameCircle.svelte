@@ -21,7 +21,7 @@
       lastNameIsLong = lastName.includes(' ') ? false : true;
     }
     // @ts-ignore
-    lastName = lastName?.split(/[ ]/g) || lastName;
+    lastName = lastName?.split(' ') || lastName;
   }
   $: {
     twoLines = Array.isArray(lastName) && lastName?.length > 1;
@@ -71,7 +71,7 @@
 
   <svg class={`text ${textClass}`} viewBox="0 0 100 100" width="80" height="80" x="10" y="11">
     <g class="text__wrapper" fill="white" width="100">
-      <text x="50" y={twoLines ? 25 : 32} text-anchor="middle" class="text__first-name">{firstName}</text>
+      {#if firstName}<text x="50" y={twoLines ? 25 : 32} text-anchor="middle" class="text__first-name">{firstName}</text>{/if}
       {#if lastName}
         {#each lastName as name, i }
         <text
@@ -96,6 +96,8 @@
     position: relative;
     z-index: 2;
     width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     align-self: center;
     justify-self: center;
     margin: 0;
@@ -111,7 +113,7 @@
   }
 
   .text__wrapper {
-    font-family: "Proxima Nova Extra Condensed", "proxima-nova-extra-condensed", sans-serif;
+    font-family: "proxima-nova-extra-condensed", sans-serif;
     fill: white;
     font-weight: 400;
     text-transform: uppercase;
@@ -138,8 +140,9 @@
   .glass__front {
     mix-blend-mode: multiply;
     opacity: .5;
-    filter: brightness(0.8) saturate(0);
+    filter: brightness(0.8);
     transform-origin: 50%;
+    backface-visibility: hidden;
     animation: glass-skew ease-in 60s both infinite alternate;
   }
 
@@ -164,15 +167,15 @@
 
   @keyframes glass-skew {
     0% {
-        transform: scale(1) skew(0);
+        transform: scale(1) skew(0) translateZ(1%);
         opacity: .7;
     }
     50% {
-        transform: scale(1.1) skew(10deg);
+        transform: scale(1.1) skew(10deg) translateZ(1%);
         opacity: .6;
     }
     100% {
-        transform: scale(1.2) skew(4deg);
+        transform: scale(1.2) skew(4deg) translateZ(1%);
         opacity: .5;
     }
   }

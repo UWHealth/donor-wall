@@ -1,11 +1,9 @@
 <script>
   import NameCircle from "./NameCircle.svelte";
-  import { fly } from 'svelte/transition';
-  import { quintOut } from 'svelte/easing';
 
-  export let title = "A new kidney saved Christopher's life";
-  export let firstName = 'Christopher';
-  export let lastName = 'Dalton-Lee';
+  export let title = '';
+  export let firstName = '';
+  export let lastName = '';
   export let year = 2022;
   export let organ = '';
   export let date = '';
@@ -22,11 +20,10 @@
     <NameCircle class="circle__img" {firstName} {lastName} {year} lightColor={topColor} fillColor={bottomColor}/>
   </div>
 
-
   <div class="meta__container">
 
     <div id="Name" class="meta__title">
-      <slot>{title}</slot>
+      <slot>{#if title}{title}{/if}</slot>
     </div>
 
     <div id="Organ" class="meta__organ">

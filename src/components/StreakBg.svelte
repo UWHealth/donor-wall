@@ -56,7 +56,7 @@
       radial-gradient(farthest-side, transparent 50%, var(--top-color) 70%, transparent),
       radial-gradient(closest-side, transparent 60%, var(--bottom-color) 80%, transparent),
       linear-gradient(to bottom, var(--top-color), var(--bottom-color)),
-      radial-gradient(farthest-side, rgba(white, .2), rgba(black, .3))
+      radial-gradient(farthest-side, rgba(white, .2), rgba(black, .3)) // vignette
     ;
 
     background-position: 50% 0, 50% 55%, 0;
@@ -125,8 +125,8 @@
 
   @keyframes bg-size {
     0% {
-      background-size:     150% 150%,  200%  050%  , 100%;
-      background-position: 050% 000%, -100%  050%  , 0;
+      background-size:     150% 150%,  200%  100%  , 100%;
+      background-position: 050% 000%,  050%  000%  , 0;
     }
     100% {
       background-size:      450%  500%,  800%  200% , 100%;

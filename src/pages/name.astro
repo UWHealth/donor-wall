@@ -2,18 +2,11 @@
 import Layout from '$layouts/global.astro';
 import NameView from '$components/NameView.svelte';
 
-const { firstName="Hugo", lastName="Walter Lee", year="2022" } = Astro.props;
+const { firstName="", lastName="", year="" } = Astro.props;
 
-export {firstName, lastName, year};
+export { firstName, lastName, year };
 ---
 
 <Layout title={"Name View"}>
   <NameView firstName={firstName} lastName={lastName} year={year} client:load/>
-  <script define:vars={{firstName, lastName, year}}>
-    if (typeof window !== 'undefined') {
-      window._APP = {
-        firstName, lastName, year
-      }
-    }
-  </script>
 </Layout>

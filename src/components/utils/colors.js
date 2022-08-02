@@ -1,5 +1,6 @@
 import anime from "animejs";
-import writable, { readableWithGet as readable } from './storeWithGet';
+import writable from './storeWithGet';
+import arrayRotate from "./arrayRotate";
 
 const colorCycle = [
   '#4572ab', //blue
@@ -10,27 +11,22 @@ const colorCycle = [
   "#B46B59", //red
   "#AA708F", //magenta
   "#736FA2", //purple
-  '#4572ab', //blue
-];
-
-const reverseColors = [
-  colorCycle.at(-3),
-  colorCycle.at(2),
-  ...colorCycle,
-  colorCycle.at(-3)
 ];
 
 export const colorSet = [...colorCycle];
 
-
 function createColors ({
   topColors = [...colorCycle],
-  bottomColors = [...reverseColors],
-  duration = 60000,
+  bottomColors = arrayRotate([...colorCycle], 1),
+  duration = 90000,
+  easing = 'easeInOutSine'
 }) {
-  const targets = { topColor: topColors[0], bottomColor: bottomColors[0] };
+  const targets = {
+    topColor: topColors[0],
+    bottomColor: bottomColors[0]
+  };
 
-  const {subscribe, set, get} = writable({ ...targets })
+  const { subscribe, set, get } = writable({ ...targets });
 
   let animation;
 
@@ -39,11 +35,10 @@ function createColors ({
       targets,
       topColor: topColors,
       bottomColor: bottomColors,
-      loop: true,
-      easing: 'easeOutInCubic',
-      direction: 'normal',
-      delay: anime.stagger(duration/1000),
+      easing,
       duration,
+      direction: 'alternate',
+      loop: true,
       autoplay: true,
       update: () => {
         set({

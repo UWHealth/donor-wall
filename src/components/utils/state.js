@@ -1,4 +1,4 @@
-import store from './storeWithGet';
+import store from './storeWithUrl';
 
 const state = store({});
 
