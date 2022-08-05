@@ -1,8 +1,7 @@
 import anime from "animejs";
-import writable from './storeWithGet';
 import arrayRotate from "./arrayRotate";
 
-const colorCycle = [
+const colorArray = [
   '#4572ab', //blue
   '#45A3AB', //turquoise
   '#6c9564', //green
@@ -13,93 +12,38 @@ const colorCycle = [
   "#736FA2", //purple
 ];
 
-export const colorSet = [...colorCycle];
+export const colorSet = [...colorArray];
 
-function createColors ({
-  topColors = [...colorCycle],
-  bottomColors = arrayRotate([...colorCycle], 1),
-  duration = 90000,
-  easing = 'easeInOutSine'
-}) {
-  const targets = {
-    topColor: topColors[0],
-    bottomColor: bottomColors[0]
+export const animateColors = ({
+  el,
+  offset = 0,
+  duration = 90000
+}) => {
+
+  if (typeof window === 'undefined') return;
+
+  const topColors = arrayRotate([...colorArray], offset);
+  const bottomColors = arrayRotate([...colorArray], offset + 1);
+
+  const colors = {
+    color1: [...topColors][0],
+    color2: [...bottomColors][0]
   };
 
-  const { subscribe, set, get } = writable({ ...targets });
+  const animation = anime({
+    targets: colors,
+    color1: topColors,
+    color2: bottomColors,
+    duration,
+    direction: 'alternate',
+    easing: 'linear',
+    loop: true,
+    autoplay: true,
+    update: (anim) => {
+      el.setAttribute('style', `--top-color:${colors.color1}; --bottom-color:${colors.color2};`);
+    }
+  });
 
-  let animation;
-
-  if (typeof window !== 'undefined') {
-    animation = anime({
-      targets,
-      topColor: topColors,
-      bottomColor: bottomColors,
-      easing,
-      duration,
-      direction: 'alternate',
-      loop: true,
-      autoplay: true,
-      update: () => {
-        set({
-          topColor: targets.topColor,
-          bottomColor: targets.bottomColor,
-        })
-      }
-    });
-
-  }
-
-  return {
-    subscribe,
-    get,
-    animation
-  }
+  window.COLORS = () => colors;
+  return animation;
 }
-
-export {createColors};
-
-const colorStore = createColors({});
-export default colorStore;
-
-
-// // const colorStore2 = ({
-// //   topColors = [...colorCycle],
-// //   bottomColors = [...reverseColors],
-// //   duration = 6000,
-// // }) => readable({...colors}, set => {
-
-
-// //   config.update(current =>
-// //     ({...current, topColors, bottomColors, duration })
-// //   )
-
-// // })
-
-// const colorStore = readable({...colors}, set => {
-
-//   set({ topColor, bottomColor });
-//   let animation;
-
-//   if (typeof window !== 'undefined') {
-//     animation = anime({
-//       targets: colors,
-//       topColor: colorCycle,
-//       bottomColor: reverseColors,
-//       loop: true,
-//       easing: 'easeInQuad',
-//       direction: 'alternate',
-//       duration: 60000,
-//       update: () => {
-//         set({
-//           topColor: colors.topColor,
-//           bottomColor: colors.bottomColor,
-//         })
-//       }
-//     });
-//   }
-
-//   return () => ({ ...colors, animation });
-// });
-
-// export default colorStore;

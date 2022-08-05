@@ -9,35 +9,14 @@ Both were chosen because of their great DX and their ability to produce small, p
 Views are the "pages" of the project. They can be accessed with paths that follow. 
 
 * **Article View** (`/article` & `/article/[number]`) — Features a photo, a "Name Circle", a headline, and some paragraphs.
-  * **Props** — Every part of the page can be changed using URL params as props.
-    ```js 
-    {
-      firstName = '', // Patient's first name
-      lastName = '', // Patient's last name
-      image = '', // Image url of story
-      title = '', // Title of story
-      story = '', // HTML of story
-      organ = '', // Patient's organ (optional)
-      year = '' // Donation year (optional)
-    }
-    ```
 * **Name View** (`/name`) — Shows a "legacy donor"'s name in a faux-glass circle in front of some cycling colors.
-  * **Props** — Every part of the page can be changed using URL params as props.
-    ```js 
-    {
-      firstName = '', // Patient's first name
-      lastName = '', // Patient's last name
-      year = '' // Donation year
-    }
-    ```
 * **Bubbles View** (`/bubbles-left` & `/bubbles-right`) — Displays some names in circles on a gradient.
-  * No props. This is expected to be controlled by a web server.
 
-## State and colors
+## Colors
 
-**Setting State**
+<!-- **Setting State**
 On pages that allow for it, props can be set via global `SET_STATE` method on `window`. Any page prop can be set via this method. If you just want access to the current props, `GET_STATE` is also available.
-All items in state will also show up in the url, and can be set via the url. 
+All items in state will also show up in the url, and can be set via the url.  -->
 
 **Colors**
 A two-key object controls the gradients on most pages. The object contains `topColor` and `bottomColor` keys, which are being set via an animation.

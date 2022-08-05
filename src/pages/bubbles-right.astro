@@ -3,12 +3,9 @@ import '$styles/bubble.css';
 import Layout from '$layouts/global.astro';
 import { colorSet } from '$components/utils/colors';
 
-const topColor = colorSet.at(4);
-const bottomColor = colorSet.at(6);
-
 ---
 <Layout title={"Bubbles (right) view"}>
-  <article id="root" class="p-0" style={"--top-color:"+{topColor}+";--bottom-color:"+{bottomColor}+";"}>
+  <article id="root" class="p-0" style={`--bottom-color: ${colorSet[3]}; --top-color: ${colorSet[4]}`}>
     <div class="bubble-panel" style="--gradient-angle: 40deg;">
       <div class="bubble-container" style="color: black; top: 168px; left: 167px; width:335px; height:335px"><div class="bubble-data fadein" ><div class="firstname" style="letter-spacing: 0.5em;" >Barb</div>
         <div class="lastname" style="font-size: 47.101265px;">Degenhardt</div>
@@ -48,16 +45,10 @@ const bottomColor = colorSet.at(6);
       </div>
   </article>
 
-  <script type="module">
-    import arrayRotate from '/src/components/utils/arrayRotate.js';
-    import setColors from '/src/components/utils/setColors.js';
-    import { colorSet } from '/src/components/utils/colors.js';
+  <script>
+    import { animateColors } from '$components/utils/colors.js';
 
-    const topColors = arrayRotate([...colorSet], 4);
-    const bottomColors = arrayRotate([...colorSet], 6);
-
-    setColors(document.querySelector('#root'), 140000, topColors, bottomColors);
-
+    animateColors({ el: document.querySelector('#root'), offset: 4, duration: 120000 });
   </script>
 </Layout>
 

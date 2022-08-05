@@ -3,12 +3,9 @@ import '$styles/bubble.css';
 import Layout from '$layouts/global.astro';
 import { colorSet } from '$components/utils/colors';
 
-const topColor = colorSet[0];
-const bottomColor = colorSet.at(-3);
-
 ---
 <Layout title={"bubbles left"}>
-  <article id="root" class="p-0" style={"--top-color:"+{topColor}+";--bottom-color:"+{bottomColor}+";"}>
+  <article id="root" class="p-0" style={`--bottom-color: ${colorSet[0]}; --top-color: ${colorSet[1]}`}>
     <div class="bubble-panel" style="--gradient-angle: 150deg;">
       <div class="bubble-container" style="color: black; top: 230px; left: 167px; width:335px; height:335px" b-dkwpqw18xn=""><div class="bubble-data fadein" b-dkwpqw18xn=""><div class="firstname" style="letter-spacing: 0.5em;" b-dkwpqw18xn="">Linda</div>
       <div class="lastname" style="font-size: 61px;">Heinzen</div>
@@ -48,10 +45,10 @@ const bottomColor = colorSet.at(-3);
     </div>
   </article>
 
-  <script type="module">
-    import setColors from '/src/components/utils/setColors.js';
+  <script>
+    import { animateColors } from '$components/utils/colors.js';
 
-    setColors(document.querySelector('#root'), 1400000);
+    animateColors({ el: document.querySelector('#root'), offset: 0, duration: 120000 });
   </script>
 </Layout>
 

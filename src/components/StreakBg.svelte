@@ -1,5 +1,6 @@
 <script>
   import streakImg from '$assets/streaks.avif';
+  import lowResStreakImg from '$assets/streaks-small.jpg';
 
   export let topColor = "blue";
   export let bottomColor = "green";
@@ -8,9 +9,11 @@
   export {classes as class};
 </script>
 
-<!-- <svelte:options tag='streaks-bg' /> -->
-
-<section class={`container ${classes}`} style:--bottom-color={bottomColor} style:--top-color={topColor}>
+<svlete:head>
+  <link rel="preload" href={streakImg} as="image"/>
+  <link rel="preload" href={lowResStreakImg} as="image"/>
+</svlete:head>
+<section class={`container ${classes}`} style:--color-2={bottomColor} style:--color-1={topColor}>
   <div class="bg">
 
     <div class="content">
@@ -21,16 +24,15 @@
     <img alt="" class="streak-img" src={streakImg}>
 
     <img alt="" class="streak-img streak-img--duplicate" src={streakImg}>
-    <img alt="" class="streak-img streak-img--faint" src={streakImg}>
-    <img alt="" class="streak-img streak-img--faint" src={streakImg}>
+    <img alt="" class="streak-img streak-img--faint" src={lowResStreakImg}>
   </div>
 
 </section>
 
 <style lang="scss">
   .container {
-    --top-color: black;
-    --bottom-color: black;
+    --color-1: black;
+    --color-2: black;
     width: 100%;
     overflow: hidden;
   }
@@ -53,9 +55,9 @@
     filter: saturate(.9);
 
     background-image:
-      radial-gradient(farthest-side, transparent 50%, var(--top-color) 70%, transparent),
-      radial-gradient(closest-side, transparent 60%, var(--bottom-color) 80%, transparent),
-      linear-gradient(to bottom, var(--top-color), var(--bottom-color)),
+      radial-gradient(farthest-side, transparent 50%, var(--color-1) 70%, transparent),
+      radial-gradient(closest-side, transparent 60%, var(--color-2) 80%, transparent),
+      linear-gradient(to bottom, var(--color-1), var(--color-2)),
       radial-gradient(farthest-side, rgba(white, .2), rgba(black, .3)) // vignette
     ;
 

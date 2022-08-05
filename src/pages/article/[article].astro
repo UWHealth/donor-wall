@@ -1,6 +1,6 @@
 ---
 import Layout from '$layouts/global.astro';
-import ArticleView from '../../components/ArticleView.svelte';
+import ArticleView from '../../components/ArticleView.astro';
 import fs from 'fs-extra';
 
 export async function getStaticPaths() {
@@ -31,7 +31,6 @@ const { firstName, lastName, title, story, image, organ, year } = Astro.props;
 
 <Layout title={"Article View: " + firstName + lastName }>
   <ArticleView
-    client:load
     firstName={firstName}
     lastName={lastName}
     organ={organ}

@@ -1,7 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { createColors, colorSet } from './utils/colors.js';
-  import arrayRotate from './utils/arrayRotate.js';
+  import { createColors } from './utils/colorsStore.js';
   import state from './utils/state.js';
 
   import NameCircle from './NameCircle.svelte';
@@ -13,8 +12,7 @@
 
   let colors = createColors({
     duration: 90000,
-    topColors: arrayRotate([...colorSet], -1),
-    bottomColors: arrayRotate([...colorSet], 0)
+    offset: -1,
   });
 
   $: {
@@ -37,7 +35,14 @@
 
 <div class="root">
   <StreakBg {...$colors} class="streak-container">
-    <NameCircle class="graphic--animation" lightColor={$colors.topColor} fillColor={$colors.bottomColor} firstName={firstName} lastName={lastName} year={year}/>
+    <NameCircle
+      class="graphic--animation"
+      lightColor={$colors.topColor}
+      fillColor={$colors.bottomColor}
+      firstName={firstName}
+      lastName={lastName}
+      year={year}
+    />
   </StreakBg>
 </div>
 
@@ -57,9 +62,6 @@
   .root :global(.graphic--animation) {
     animation: fade-grow-in 25s 1 both normal ease-out;
     animation-delay: 2s;
-    will-change: transform;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
     filter: drop-shadow(0 2px 5px rgba(navy, .15));
   }
 

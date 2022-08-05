@@ -8,8 +8,8 @@
   export let bottomColor = '#5e36f7';
 </script>
 
-<div class="shadow"></div>
-<footer class={classes} style:--bottom-color={bottomColor} style:--top-color={topColor}>
+<div class="shadow" style:--color-1={bottomColor} style:--color-2={topColor}></div>
+<footer class={classes} style:--color-1={bottomColor} style:--color-2={topColor}>
   <div class="content content--left">
     <slot name="left">Use your phone's camera To scan the qr&nbsp;code</slot>
   </div>
@@ -48,15 +48,17 @@
     padding: space(1);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    z-index: 3;
   }
 
   .shadow {
-    box-shadow: 0 #{space(.5)} #{space(3)} #{space(-1)} var(--top-color),
-      0 0 30px -10px var(--bottom-color);
+    display: block;
+    box-shadow: 0 #{space(1.5)} #{space(10)} #{space(-2)}  var(--color-1),
+      0 0 #{space(15)} #{space(-1)} var(--color-2);
     filter: brightness(.9);
     animation: light-fade calc(var(--animation-length) * 1.2) var(--animation-length) ease-out normal both;
   }
-  @keyframes light-fade { from { opacity: 0; } to { opacity: .25; }}
+  @keyframes light-fade { from { opacity: 0; } to { opacity: .3; }}
 
   .content {
     max-width: 40ch;
@@ -101,7 +103,7 @@
 
     &:after {
       content: '';
-      background-image: linear-gradient(45deg, var(--top-color), var(--bottom-color));
+      background-image: linear-gradient(45deg, var(--color-1), var(--color-2));
       filter: brightness(85%); // darken to ensure legibility
       position: absolute;
       top: 0;
