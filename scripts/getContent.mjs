@@ -54,12 +54,15 @@ const pruneContentfulResponse = (data) => {
     const imageUrl = parseImage(bynderIntroMedia).replace('http://', 'https://');
 
     const imagePath = path.resolve(IMAGES_PATH, path.basename(imageUrl, '.jpg') + '.jpg');
+    const [firstName, lastName] = patientName[0].split(' ');
 
     if (imageUrl) fetchImage(imageUrl, imagePath);
 
     return {
       title: pageTitle,
       name: patientName,
+      firstName,
+      lastName,
       position: i,
       id: slug || i,
       image: '/' + path.posix.relative(PUBLIC_PATH, imagePath),
