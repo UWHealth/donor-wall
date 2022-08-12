@@ -35,7 +35,7 @@ const fetchImage = async (url, out) => {
 
   if (!response.ok) { console.error(`Cannot download image from ${url}`, response.statusText); return; }
 
-  fs.ensureDir(path.dirname(out));
+  fs.ensureDirSync(path.dirname(out));
   return response.body.pipe(fs.createWriteStream(out));
 }
 
