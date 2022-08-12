@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-PSTXOTMS">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/x-icon" href="/donor-wall/favicon.ico">
+    <title>Article View: MarkScotch</title>
+		
+    <script>
+      window.CSS.registerProperty({
+        name: '--top-color',
+        syntax: '<color>',
+        inherits: true,
+        initialValue: "red"
+      });
+      window.CSS.registerProperty({
+        name: '--bottom-color',
+        syntax: '<color>',
+        inherits: true,
+        initialValue: "red"
+      });
+    </script>
+	<link rel="stylesheet" href="/donor-wall/assets/baf6c709.43ef9751.css" />
+<link rel="stylesheet" href="/donor-wall/assets/astro-article-_article_-astro-article-index-article-astro-name-name.ccbf68fd.css" />
+<link rel="stylesheet" href="/donor-wall/assets/astro-article-_article_-astro-article-index-article.19d2464e.css" />
+<link rel="stylesheet" href="/donor-wall/assets/astro-article-_article_-astro-article-index.47044b48.css" /><script type="module" src="/donor-wall/hoisted.4f82a859.js"></script></head>
+	<body class="astro-PSTXOTMS">
+		<main class="astro-PSTXOTMS" id="">
+      <article id="story" class="story astro-JWUSBZEQ" style="--bottom-color: #4572ab; --top-color: #45A3AB">
+
+  <div class="story__container astro-JWUSBZEQ">
+		<div class="cover astro-JWUSBZEQ">
+      <img id="Image" alt="" class="cover__img astro-JWUSBZEQ" src="/content/images/1Wu0lNDhjgz3XkUmSvqnrg.jpg">
+    </div>
+
+		<div id="Content" class="row astro-JWUSBZEQ">
+
+      <style>astro-island,astro-slot{display:contents}</style><script>(self.Astro = self.Astro || {}).load = (getHydrateCallback) => {
+  (async () => {
+    let hydrate = await getHydrateCallback();
+    await hydrate();
+  })();
+};var _a;
+{
+  const propTypes = {
+    0: (value) => value,
+    1: (value) => JSON.parse(value, reviver),
+    2: (value) => new RegExp(value),
+    3: (value) => new Date(value),
+    4: (value) => new Map(JSON.parse(value, reviver)),
+    5: (value) => new Set(JSON.parse(value, reviver)),
+    6: (value) => BigInt(value),
+    7: (value) => new URL(value)
+  };
+  const reviver = (propKey, raw) => {
+    if (propKey === "" || !Array.isArray(raw))
+      return raw;
+    const [type, value] = raw;
+    return type in propTypes ? propTypes[type](value) : void 0;
+  };
+  if (!customElements.get("astro-island")) {
+    customElements.define(
+      "astro-island",
+      (_a = class extends HTMLElement {
+        constructor() {
+          super(...arguments);
+          this.hydrate = () => {
+            if (!this.hydrator || this.parentElement?.closest("astro-island[ssr]")) {
+              return;
+            }
+            const slotted = this.querySelectorAll("astro-slot");
+            const slots = {};
+            const templates = this.querySelectorAll("template[data-astro-template]");
+            for (const template of templates) {
+              if (!template.closest(this.tagName)?.isSameNode(this))
+                continue;
+              slots[template.getAttribute("data-astro-template") || "default"] = template.innerHTML;
+              template.remove();
+            }
+            for (const slot of slotted) {
+              if (!slot.closest(this.tagName)?.isSameNode(this))
+                continue;
+              slots[slot.getAttribute("name") || "default"] = slot.innerHTML;
+            }
+            const props = this.hasAttribute("props") ? JSON.parse(this.getAttribute("props"), reviver) : {};
+            this.hydrator(this)(this.Component, props, slots, {
+              client: this.getAttribute("client")
+            });
+            this.removeAttribute("ssr");
+            window.removeEventListener("astro:hydrate", this.hydrate);
+            window.dispatchEvent(new CustomEvent("astro:hydrate"));
+          };
+        }
+        connectedCallback() {
+          if (!this.hasAttribute("await-children") || this.firstChild) {
+            this.childrenConnectedCallback();
+          } else {
+            new MutationObserver((_, mo) => {
+              mo.disconnect();
+              this.childrenConnectedCallback();
+            }).observe(this, { childList: true });
+          }
+        }
+        async childrenConnectedCallback() {
+          window.addEventListener("astro:hydrate", this.hydrate);
+          await import(this.getAttribute("before-hydration-url"));
+          const opts = JSON.parse(this.getAttribute("opts"));
+          Astro[this.getAttribute("client")](
+            async () => {
+              const rendererUrl = this.getAttribute("renderer-url");
+              const [componentModule, { default: hydrator }] = await Promise.all([
+                import(this.getAttribute("component-url")),
+                rendererUrl ? import(rendererUrl) : () => () => {
+                }
+              ]);
+              this.Component = componentModule[this.getAttribute("component-export") || "default"];
+              this.hydrator = hydrator;
+              return this.hydrate;
+            },
+            opts,
+            this
+          );
+        }
+        attributeChangedCallback() {
+          if (this.hydrator)
+            this.hydrate();
+        }
+      }, _a.observedAttributes = ["props"], _a)
+    );
+  }
+}</script><astro-island uid="w7xgf" component-url="/donor-wall/StoryMeta.c7027780.js" component-export="default" renderer-url="/donor-wall/client.b27523fa.js" props="{&quot;class&quot;:[0,&quot;meta astro-JWUSBZEQ&quot;],&quot;firstName&quot;:[0,&quot;Mark&quot;],&quot;lastName&quot;:[0,&quot;Scotch&quot;],&quot;year&quot;:[0,null],&quot;organ&quot;:[0,null],&quot;date&quot;:[0,null],&quot;topColor&quot;:[0,&quot;var(--top-color)&quot;],&quot;bottomColor&quot;:[0,&quot;var(--bottom-color)&quot;]}" ssr="" client="load" before-hydration-url="data:text/javascript;charset=utf-8,//[no before-hydration script]" opts="{&quot;name&quot;:&quot;StoryMeta&quot;,&quot;value&quot;:true}" await-children=""><section class="meta meta astro-JWUSBZEQ svelte-128zb44"><div id="Circle" class="circle svelte-128zb44"><svg class="graphic circle__img svelte-1aoszpq" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><defs><clipPath id="clippath"><circle cx="50" cy="50" r="45" fill="none"></circle></clipPath><filter id="glass_filter"><feTurbulence type="fractalNoise" baseFrequency="0.04 0.04" numOctaves="14" seed="23" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence"></feTurbulence><feMorphology operator="dilate" radius="3 3" x="0%" y="0%" width="100%" height="100%" in="turbulence" result="morphology"></feMorphology><feDisplacementMap in="SourceGraphic" in2="morphology" scale="25" xChannelSelector="R" yChannelSelector="B" x="9%" y="10%" width="100%" height="100%" result="displacementMap"></feDisplacementMap><feSpecularLighting surfaceScale="4" specularConstant="1.4" specularExponent="72" x="0%" y="0%" id="lighting-color" in="turbulence" lighting-color="var(--top-color)" width="100%" height="100%" result="specularLighting1"><fePointLight x="50" y="0" z="800"></fePointLight></feSpecularLighting><feGaussianBlur stdDeviation=".5" x="0%" y="0%" width="300%" height="300%" in="specularLighting1" edgeMode="duplicate" result="blur1"></feGaussianBlur><feFlood id="base-color" flood-color="var(--bottom-color)" flood-opacity="1" x="0%" y="0%" width="100%" height="100%" result="flood"></feFlood><feBlend mode="screen" x="0%" y="0%" width="100%" height="100%" in="specularLighting" in2="flood" result="blend"></feBlend><feBlend mode="soft-light" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" in2="blend" result="blend1"></feBlend></filter></defs><circle class="circle-stroke svelte-1aoszpq" cx="50" cy="50" r="45.75" stroke="white" stroke-width="3"></circle><g clip-path="url(#clippath)" class="glass"><image clip-path="url(#clippath)" x="-100" y="-355" class="glass__bg svelte-1aoszpq" width="300" height="800" style="opacity: .9" xlink:href="/donor-wall/assets/streaks-small.efa45366.jpg" filter="url(#glass_filter)"></image><image clip-path="url(#clippath)" x="-50" y="-50" class="glass__front svelte-1aoszpq" width="300" height="300" xlink:href="/donor-wall/assets/glass-front-bw.adf7dd2b.webp"></image></g><svg class="text  svelte-1aoszpq" viewBox="0 0 100 100" width="80" height="80" x="10" y="11"><g class="text__wrapper svelte-1aoszpq" fill="var(--top-color)" width="100"><text x="50" y="32" text-anchor="middle" class="text__first-name svelte-1aoszpq">Mark</text><text text-anchor="middle" class="text__last-name svelte-1aoszpq" x="50" y="59" textLength="60" lengthAdjust="spacing">Scotch</text><text dx="50" y="78" textLength="35" text-anchor="middle" class="text__year">2022</text></g></svg></svg></div>
+
+  <div class="meta__container svelte-128zb44"><div id="Name" class="meta__title svelte-128zb44"><astro-slot>Mark Scotch&#39;s living kidney donor story</astro-slot></div>
+
+    <div id="Organ" class="meta__organ svelte-128zb44"></div>
+
+    <div id="Date" class="meta__date"></div></div>
+</section></astro-island>
+
+			<section id="Story" class="story__content astro-JWUSBZEQ">
+        <p>Mark Scotch never dreamed that a casual chat in a microbrewery would turn into a life-changing experience.</p><p>Mark and his wife Lynn are active people and avid travelers. It was on a trip through Louisiana when they stopped at a microbrewery so Mark, who sells hops, could chat with the brewer. It was a conversation with the guy relaxing on the next barstool that changed his life. </p><p>“I’m enjoying a nice chat with a guy named Hugh Smith and he says he has to leave to go home and do his dialysis,” says Mark. </p><p>After a few more questions Mark learned that Hugh had been doing peritoneal dialysis for several months and needed a kidney transplant. “The next thing I knew,” says Mark, “I was saying ‘I’ll give you a kidney.’”  </p><p>Mark knew about living kidney donation because his sister-in-law donated her kidney. “I knew it was possible, and a good thing to do,” says Mark. “I just hadn’t thought of doing it before because I’m very active with my long-distance biking, but right then and there I thought ‘now is a good time.’”</p><p>Mark called Hugh’s nurse coordinator while traveling, and again a few months later when he was back home in Wisconsin. He also studied living donation on the internet. Mark read about the National Kidney Registry (NKR) on the UW Health website. UW Health is the largest center in the NKR program and Mark wanted to do his donation in Madison, closer to home. His only remaining concern was his health post-donation. </p><p>“I don’t consider my activity level to be normal,” says Mark. “I wanted to know if other ultra-athletes had donated, and was relieved to connect with Kidney Donor Athletes,” a group formed by Tracy Hulick, an ultra-marathoner who also donated at UW Health. Mark read her story and called her. “She gave me the confidence I needed that all would be fine.”</p><p>Meanwhile, Hugh transferred his care to a transplant center in Mississippi that is also affiliated with the NKR. </p><p>During his evaluation, Mark learned about the NKR’s voucher program, which allowed him to donate his kidney to the person it matched best, at the time that worked best for Mark, and for Hugh to receive a kidney that was better matched to him. </p><p>“At first, Hugh was sad,” says Mark, “He wanted <i>my</i> kidney. But once he learned that he would get a better-matched kidney and my kidney would help someone else too, he was fine with the idea.”  </p><p>Prior to his donation, Mark decided to take his last ‘two-kidney’ ride on his bike when he trekked 150+ miles from his home in Plover, WI to Middleton. Decked out in Donate Life attire and with the help of supporters and the media, he spread his message about the importance of organ donation. But that trip was just a warm-up for his larger plan to ride from Madison to Natchitoches, LA, where he first met Hugh. Mark will depart Madison on Saturday, April 24, accompanied  by his wife Lynn in their support vehicle and anyone who wants to join them to raise awareness and capture the attention of media. <a href="https://www.facebook.com/hughsmithmarkscotch"><u>Read about Mark’s ride</u></a>.</p><p>“People like me, who like to do these things, are always looking for avenues to do these kinds of long rides,” says Mark. “April is Donate Life Month, and the perfect time to combine two things I’m passionate about. Organ donation and biking.” </p><p>Mark’s kidney went to a recipient in New York state, and he’s contemplating a ride there, too. Hugh received his kidney from someone in California and is doing well. “Our kidneys and recipients stretched from the east to west and north to south to cover the entire country!” says Mark.</p><p>Mark is grateful to everyone who helped him learn about living donation. </p><p>“It really helped to hear from other donors who got back to their life, and also how rewarding their donation experience was,” says Mark. “I know my recipient is going to be so thankful for my kidney, and even if they don’t want to meet me, that doesn’t bother me in the least,” says Mark. “There’s no better bang for your buck than being a donor. You can donate your time, talent and treasure, and that’s wonderful, but I don’t know of a single act that is better than this. The benefit and reward are incomparable.”</p><p>He is also grateful for his UW Health team. “They were excellent,” says Mark. “<span>type: entry-hyperlink id: P6906</span> was my surgeon and a great help, and everyone was very supportive and thorough.”</p><p>Mark’s life-saving decision, and his work to spread the word about living donation is inspirational. Especially to his wife Lynn, who is being evaluated to be a living kidney donor at UW Health, too.</p>
+      </section>
+
+		</div>
+	</div>
+
+  <div class="shadow svelte-hxrkwh" style="--color-1: var(--bottom-color); --color-2: var(--top-color);"></div>
+<footer class="astro-JWUSBZEQ svelte-hxrkwh" style="--color-1: var(--bottom-color); --color-2: var(--top-color);"><div class="content content--left svelte-hxrkwh">Use your phone&#39;s camera To scan the qr code</div>
+  <div class="qrcode svelte-hxrkwh"><div class="qrcode__container svelte-hxrkwh"><img class="qrcode__img svelte-hxrkwh" alt="" src="/donor-wall/assets/uwhorg-qr.ba8c0c85.png"></div></div>
+  <div class="content content--right svelte-hxrkwh">View legacy donors, read stories, donate, and more</div>
+</footer>
+
+</article>
+
+
+
+
+    </main>
+  </body></html>

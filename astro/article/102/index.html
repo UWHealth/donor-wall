@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-PSTXOTMS">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/x-icon" href="/donor-wall/favicon.ico">
+    <title>Article View: MarkGraff</title>
+		
+    <script>
+      window.CSS.registerProperty({
+        name: '--top-color',
+        syntax: '<color>',
+        inherits: true,
+        initialValue: "red"
+      });
+      window.CSS.registerProperty({
+        name: '--bottom-color',
+        syntax: '<color>',
+        inherits: true,
+        initialValue: "red"
+      });
+    </script>
+	<link rel="stylesheet" href="/donor-wall/assets/baf6c709.43ef9751.css" />
+<link rel="stylesheet" href="/donor-wall/assets/astro-article-_article_-astro-article-index-article-astro-name-name.ccbf68fd.css" />
+<link rel="stylesheet" href="/donor-wall/assets/astro-article-_article_-astro-article-index-article.19d2464e.css" />
+<link rel="stylesheet" href="/donor-wall/assets/astro-article-_article_-astro-article-index.47044b48.css" /><script type="module" src="/donor-wall/hoisted.4f82a859.js"></script></head>
+	<body class="astro-PSTXOTMS">
+		<main class="astro-PSTXOTMS" id="">
+      <article id="story" class="story astro-JWUSBZEQ" style="--bottom-color: #4572ab; --top-color: #45A3AB">
+
+  <div class="story__container astro-JWUSBZEQ">
+		<div class="cover astro-JWUSBZEQ">
+      <img id="Image" alt="" class="cover__img astro-JWUSBZEQ" src="/content/images/29vqMyW4p5Rcz9LZVhJMqb.jpg">
+    </div>
+
+		<div id="Content" class="row astro-JWUSBZEQ">
+
+      <style>astro-island,astro-slot{display:contents}</style><script>(self.Astro = self.Astro || {}).load = (getHydrateCallback) => {
+  (async () => {
+    let hydrate = await getHydrateCallback();
+    await hydrate();
+  })();
+};var _a;
+{
+  const propTypes = {
+    0: (value) => value,
+    1: (value) => JSON.parse(value, reviver),
+    2: (value) => new RegExp(value),
+    3: (value) => new Date(value),
+    4: (value) => new Map(JSON.parse(value, reviver)),
+    5: (value) => new Set(JSON.parse(value, reviver)),
+    6: (value) => BigInt(value),
+    7: (value) => new URL(value)
+  };
+  const reviver = (propKey, raw) => {
+    if (propKey === "" || !Array.isArray(raw))
+      return raw;
+    const [type, value] = raw;
+    return type in propTypes ? propTypes[type](value) : void 0;
+  };
+  if (!customElements.get("astro-island")) {
+    customElements.define(
+      "astro-island",
+      (_a = class extends HTMLElement {
+        constructor() {
+          super(...arguments);
+          this.hydrate = () => {
+            if (!this.hydrator || this.parentElement?.closest("astro-island[ssr]")) {
+              return;
+            }
+            const slotted = this.querySelectorAll("astro-slot");
+            const slots = {};
+            const templates = this.querySelectorAll("template[data-astro-template]");
+            for (const template of templates) {
+              if (!template.closest(this.tagName)?.isSameNode(this))
+                continue;
+              slots[template.getAttribute("data-astro-template") || "default"] = template.innerHTML;
+              template.remove();
+            }
+            for (const slot of slotted) {
+              if (!slot.closest(this.tagName)?.isSameNode(this))
+                continue;
+              slots[slot.getAttribute("name") || "default"] = slot.innerHTML;
+            }
+            const props = this.hasAttribute("props") ? JSON.parse(this.getAttribute("props"), reviver) : {};
+            this.hydrator(this)(this.Component, props, slots, {
+              client: this.getAttribute("client")
+            });
+            this.removeAttribute("ssr");
+            window.removeEventListener("astro:hydrate", this.hydrate);
+            window.dispatchEvent(new CustomEvent("astro:hydrate"));
+          };
+        }
+        connectedCallback() {
+          if (!this.hasAttribute("await-children") || this.firstChild) {
+            this.childrenConnectedCallback();
+          } else {
+            new MutationObserver((_, mo) => {
+              mo.disconnect();
+              this.childrenConnectedCallback();
+            }).observe(this, { childList: true });
+          }
+        }
+        async childrenConnectedCallback() {
+          window.addEventListener("astro:hydrate", this.hydrate);
+          await import(this.getAttribute("before-hydration-url"));
+          const opts = JSON.parse(this.getAttribute("opts"));
+          Astro[this.getAttribute("client")](
+            async () => {
+              const rendererUrl = this.getAttribute("renderer-url");
+              const [componentModule, { default: hydrator }] = await Promise.all([
+                import(this.getAttribute("component-url")),
+                rendererUrl ? import(rendererUrl) : () => () => {
+                }
+              ]);
+              this.Component = componentModule[this.getAttribute("component-export") || "default"];
+              this.hydrator = hydrator;
+              return this.hydrate;
+            },
+            opts,
+            this
+          );
+        }
+        attributeChangedCallback() {
+          if (this.hydrator)
+            this.hydrate();
+        }
+      }, _a.observedAttributes = ["props"], _a)
+    );
+  }
+}</script><astro-island uid="2637DB" component-url="/donor-wall/StoryMeta.c7027780.js" component-export="default" renderer-url="/donor-wall/client.b27523fa.js" props="{&quot;class&quot;:[0,&quot;meta astro-JWUSBZEQ&quot;],&quot;firstName&quot;:[0,&quot;Mark&quot;],&quot;lastName&quot;:[0,&quot;Graff&quot;],&quot;year&quot;:[0,null],&quot;organ&quot;:[0,null],&quot;date&quot;:[0,null],&quot;topColor&quot;:[0,&quot;var(--top-color)&quot;],&quot;bottomColor&quot;:[0,&quot;var(--bottom-color)&quot;]}" ssr="" client="load" before-hydration-url="data:text/javascript;charset=utf-8,//[no before-hydration script]" opts="{&quot;name&quot;:&quot;StoryMeta&quot;,&quot;value&quot;:true}" await-children=""><section class="meta meta astro-JWUSBZEQ svelte-128zb44"><div id="Circle" class="circle svelte-128zb44"><svg class="graphic circle__img svelte-1aoszpq" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><defs><clipPath id="clippath"><circle cx="50" cy="50" r="45" fill="none"></circle></clipPath><filter id="glass_filter"><feTurbulence type="fractalNoise" baseFrequency="0.04 0.04" numOctaves="14" seed="23" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence"></feTurbulence><feMorphology operator="dilate" radius="3 3" x="0%" y="0%" width="100%" height="100%" in="turbulence" result="morphology"></feMorphology><feDisplacementMap in="SourceGraphic" in2="morphology" scale="25" xChannelSelector="R" yChannelSelector="B" x="9%" y="10%" width="100%" height="100%" result="displacementMap"></feDisplacementMap><feSpecularLighting surfaceScale="4" specularConstant="1.4" specularExponent="72" x="0%" y="0%" id="lighting-color" in="turbulence" lighting-color="var(--top-color)" width="100%" height="100%" result="specularLighting1"><fePointLight x="50" y="0" z="800"></fePointLight></feSpecularLighting><feGaussianBlur stdDeviation=".5" x="0%" y="0%" width="300%" height="300%" in="specularLighting1" edgeMode="duplicate" result="blur1"></feGaussianBlur><feFlood id="base-color" flood-color="var(--bottom-color)" flood-opacity="1" x="0%" y="0%" width="100%" height="100%" result="flood"></feFlood><feBlend mode="screen" x="0%" y="0%" width="100%" height="100%" in="specularLighting" in2="flood" result="blend"></feBlend><feBlend mode="soft-light" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" in2="blend" result="blend1"></feBlend></filter></defs><circle class="circle-stroke svelte-1aoszpq" cx="50" cy="50" r="45.75" stroke="white" stroke-width="3"></circle><g clip-path="url(#clippath)" class="glass"><image clip-path="url(#clippath)" x="-100" y="-355" class="glass__bg svelte-1aoszpq" width="300" height="800" style="opacity: .9" xlink:href="/donor-wall/assets/streaks-small.efa45366.jpg" filter="url(#glass_filter)"></image><image clip-path="url(#clippath)" x="-50" y="-50" class="glass__front svelte-1aoszpq" width="300" height="300" xlink:href="/donor-wall/assets/glass-front-bw.adf7dd2b.webp"></image></g><svg class="text  svelte-1aoszpq" viewBox="0 0 100 100" width="80" height="80" x="10" y="11"><g class="text__wrapper svelte-1aoszpq" fill="var(--top-color)" width="100"><text x="50" y="32" text-anchor="middle" class="text__first-name svelte-1aoszpq">Mark</text><text text-anchor="middle" class="text__last-name svelte-1aoszpq" x="50" y="59" textLength="50" lengthAdjust="spacing">Graff</text><text dx="50" y="78" textLength="35" text-anchor="middle" class="text__year">2022</text></g></svg></svg></div>
+
+  <div class="meta__container svelte-128zb44"><div id="Name" class="meta__title svelte-128zb44"><astro-slot>Mark is enjoying the road ahead after a heart transplant</astro-slot></div>
+
+    <div id="Organ" class="meta__organ svelte-128zb44"></div>
+
+    <div id="Date" class="meta__date"></div></div>
+</section></astro-island>
+
+			<section id="Story" class="story__content astro-JWUSBZEQ">
+        <p>Mark Graff doesn’t own a crystal ball, but 30 years ago, he and his siblings received a glimpse into the future that few people have—a gene test that showed five out of the seven of them carried the gene for cardiomyopathy, a disease that makes it harder for the heart to pump blood to the rest of the body.</p><p>They underwent the testing after an older cousin started experiencing serious heart problems. And that’s how it came to be that Mark, at age 22, knew he was at great risk for life-threatening heart disease.
+
+For nearly three decades, Mark and his siblings took precautionary measures to prepare for the inevitable as they watched their older family members—including their father and his siblings—succumb to the disease. Even though he had no symptoms, Mark received a pacemaker in 2009 and underwent the whole gamut of tests annually. Then, in 2018, he finally started experiencing extreme exhaustion and shortness of breath. By 2019, <span>type: entry-hyperlink id: P10964</span>, cardiologist with the <span>type: entry-hyperlink id: 14085</span>, diagnosed Mark with congestive heart failure. Ultimately, Dr. Raza said, Mark would need a heart transplant.
+
+For Mark, it was a call to action. He had watched his father—who also had cardiomyopathy—struggle with changes in medications and challenges with breathing during his last five years, and he was eager to try something that would give him a longer life than his dad. “This was an opportunity that I took willingly,” he says. “I welcomed it with open arms. I want to live!”
+
+Mark was put on the wait list for a new heart at the UW Health Heart Transplant Program in February 2020. On May 13, he received a call that a heart had become available, but it turned out it was not viable. The next day, which was May 14, 2020, he got another offer for a heart—this time, it was a Donation after Circulatory Death (DCD) heart. DCD is an option for organ donation for patients with severe brain injuries whose families have decided to remove all life-sustaining treatment. Once their heart permanently stops beating, they have experienced circulatory death and could be eligible for organ donation. UW Health has been a national leader in offering DCD organs, thus increasing the number of organs that can provide life-saving transplants. 
+
+After receiving his new heart, Mark was in the hospital for three weeks. When he came back home, he was weak, but day by day he grew stronger. In August 2020, he returned to his job as a water distribution supervisor in the city of LaCrosse, and a couple months later, he resumed his beloved pastime of deer hunting. He has also been supporting his siblings as they undergo their heart disease journey. His sister, Sandy, <span>type: entry-hyperlink id: 6E1ZGkBbZThSIrNUK00sVp</span> at UW Health in September 2020 after he recommended that she pursue getting on the wait list there.
+
+Mark’s recovery is still ongoing as he works hard lifting weights and eating healthy foods. But he’s incredibly grateful that he has a new heart as he moves forward. “There’s a road ahead of me yet with a few issues to manage,” he says. “But I’m lucky. I keep living my life day by day.”
+</p>
+      </section>
+
+		</div>
+	</div>
+
+  <div class="shadow svelte-hxrkwh" style="--color-1: var(--bottom-color); --color-2: var(--top-color);"></div>
+<footer class="astro-JWUSBZEQ svelte-hxrkwh" style="--color-1: var(--bottom-color); --color-2: var(--top-color);"><div class="content content--left svelte-hxrkwh">Use your phone&#39;s camera To scan the qr code</div>
+  <div class="qrcode svelte-hxrkwh"><div class="qrcode__container svelte-hxrkwh"><img class="qrcode__img svelte-hxrkwh" alt="" src="/donor-wall/assets/uwhorg-qr.ba8c0c85.png"></div></div>
+  <div class="content content--right svelte-hxrkwh">View legacy donors, read stories, donate, and more</div>
+</footer>
+
+</article>
+
+
+
+
+    </main>
+  </body></html>

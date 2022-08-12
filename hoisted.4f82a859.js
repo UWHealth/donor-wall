@@ -1,0 +1,1 @@
+import{a as e}from"./chunks/colors.7b9067fa.js";import{s as o}from"./chunks/state.a879644e.js";import"./chunks/index.2fd2ec22.js";const i=document.getElementById("image");o.subscribe(t=>{t.image&&i.setAttribute("src",t.image)});const m=e({el:document.querySelector("#story"),offset:2});typeof window<"u"&&(window.ANIM=m);
