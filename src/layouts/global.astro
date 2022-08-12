@@ -2,7 +2,7 @@
 import '$styles/global.scss';
 import '$styles/fonts.css';
 
-const { title, classes } = Astro.props;
+const { title, classes, id } = Astro.props;
 
 ---
 <!DOCTYPE html>
@@ -22,9 +22,23 @@ const { title, classes } = Astro.props;
 				place-content: center;
 			}
 		</style>
+    <script is:inline>
+      window.CSS.registerProperty({
+        name: '--top-color',
+        syntax: '<color>',
+        inherits: true,
+        initialValue: "red"
+      });
+      window.CSS.registerProperty({
+        name: '--bottom-color',
+        syntax: '<color>',
+        inherits: true,
+        initialValue: "red"
+      });
+    </script>
 	</head>
 	<body>
-		<main class:list={classes && classes}>
+		<main class:list={classes && classes} id={id || ''}>
       <slot/>
     </main>
   </body>

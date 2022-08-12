@@ -1,4 +1,3 @@
-import anime from "animejs";
 import arrayRotate from "./arrayRotate";
 
 const colorArray = [
@@ -17,7 +16,7 @@ export const colorSet = [...colorArray];
 export const animateColors = ({
   el,
   offset = 0,
-  duration = 90000
+  duration = 60000
 }) => {
 
   if (typeof window === 'undefined') return;
@@ -25,25 +24,12 @@ export const animateColors = ({
   const topColors = arrayRotate([...colorArray], offset);
   const bottomColors = arrayRotate([...colorArray], offset + 1);
 
-  const colors = {
-    color1: [...topColors][0],
-    color2: [...bottomColors][0]
-  };
-
-  const animation = anime({
-    targets: colors,
-    color1: topColors,
-    color2: bottomColors,
-    duration,
+  return el.animate({
+    "--top-color": topColors,
+    "--bottom-color": bottomColors
+  }, {
+    duration: duration,
     direction: 'alternate',
-    easing: 'linear',
-    loop: true,
-    autoplay: true,
-    update: (anim) => {
-      el.setAttribute('style', `--top-color:${colors.color1}; --bottom-color:${colors.color2};`);
-    }
+    iterations: Infinity
   });
-
-  window.COLORS = () => colors;
-  return animation;
 }

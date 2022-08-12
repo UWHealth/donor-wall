@@ -1,0 +1,10 @@
+---
+import Layout from '$layouts/global.astro';
+import NameView from '$components/views/NameView.astro';
+
+const { firstName, lastName, year } = Astro.props;
+---
+
+<Layout title={"Name View"}>
+  <NameView firstName={firstName} lastName={lastName} year={year}/>
+</Layout>

@@ -1,5 +1,6 @@
 <script>
   import NameCircle from "./NameCircle.svelte";
+  import {onMount} from 'svelte';
 
   export let title = '';
   export let firstName = '';
@@ -12,6 +13,7 @@
 
   let classes = '';
   export {classes as class};
+
 </script>
 
 <section class={"meta " + classes}>

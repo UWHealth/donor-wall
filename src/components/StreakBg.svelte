@@ -13,6 +13,7 @@
   <link rel="preload" href={streakImg} as="image"/>
   <link rel="preload" href={lowResStreakImg} as="image"/>
 </svlete:head>
+
 <section class={`container ${classes}`} style:--color-2={bottomColor} style:--color-1={topColor}>
   <div class="bg">
 
@@ -30,6 +31,17 @@
 </section>
 
 <style lang="scss">
+  @property --color-1 {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: black;
+  }
+  @property --color-2 {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: black;
+  }
+
   .container {
     --color-1: black;
     --color-2: black;

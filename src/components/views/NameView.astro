@@ -1,26 +1,27 @@
 ---
-  import NameCircle from './NameCircle.svelte';
-  import StreakBg from './StreakBg.svelte';
-  import {colorSet} from './utils/colors';
+  import NameCircle from '$components/NameCircle.svelte';
+  import StreakBg from '$components/StreakBg.svelte';
 
   const { firstName = "Lorem", lastName = "Ipsium", year="2022" } = Astro.props;
   const varTop = "var(--top-color)";
   const varBottom = "var(--bottom-color)";
 ---
 
-<div id="root" class="root" style={`--bottom-color: ${colorSet[0]}; --top-color: ${colorSet[1]}`}>
+<div id="root" class="root">
   <StreakBg topColor={varTop} bottomColor={varBottom} class="streak-container">
-    <NameCircle class="graphic--animation" lightColor={varTop} fillColor={varBottom} firstName={firstName} lastName={lastName} year={year}/>
+    <NameCircle class="graphic--animation" lightColor={varTop} fillColor={varBottom} client:load/>
   </StreakBg>
 </div>
 
 <script>
   import { animateColors } from '$components/utils/colors.js';
 
-  animateColors({el: document.querySelector('#root'), offset: -1 });
+  const animation = animateColors({el: document.querySelector('#root'), offset: -1 });
+  if (typeof window !== "undefined") window.ANIM = animation;
 </script>
 
 <style>
+
   .root {
     animation: fade-in 5s ease-out normal both;
   }

@@ -1,67 +1,51 @@
-<script>
-  import { onMount } from 'svelte';
+---
   import defaultImage from '$assets/article-default.jpg';
-  import StoryMeta from './StoryMeta.svelte';
-  import Footer from './Footer.svelte';
-  import colors from "./utils/colorsStore";
-  import state from "./utils/state";
+  import StoryMeta from '$components/StoryMeta.svelte';
+  import Footer from '$components/Footer.svelte';
+  import { colorSet } from '$components/utils/colors';
 
-  export let title = '';
-  export let firstName = '';
-  export let lastName = '';
-  export let year = '';
-  export let organ = '';
-  export let date = '';
-  export let story = '';
-  export let image = defaultImage;
+  const { title, firstName, lastName, year, organ, date, story, image = defaultImage } = Astro.props;
 
-  $: {
-    title = $state.title || title;
-    firstName = $state.firstName || firstName;
-    lastName = $state.lastName || lastName;
-    year = $state.year || year;
-    story = $state.story || story;
-    organ = $state.organ || organ;
-    image = $state.image || image;
-  };
+---
 
-  onMount(()=>{
-    window.SET_STATE = state.set;
-    window.GET_STATE = state.get;
-    window.COLORS = colors.get;
-  });
-</script>
-
-<svelte:options accessors={true}/>
-
-<svelte:head>
-  <title>Article view: {firstName} {lastName}</title>
-  <link rel="prefetch" href={image}>
-</svelte:head>
-
-<article class="story" style:--bottom-color={$colors.bottomColor} style:--top-color={$colors.topColor}>
+<article id="story" class="story" style={`--bottom-color: ${colorSet[0]}; --top-color: ${colorSet[1]}`}>
 
   <div class="story__container">
 		<div class="cover">
-      <img alt="" class="cover__img" src={image} />
+      <img id="Image" alt="" class="cover__img" src={image} />
     </div>
 
 		<div id="Content" class="row">
 
-      <StoryMeta class="meta" {firstName} {lastName} {year} {...$colors} {organ} {date}>
-        {#if title}{title}{/if}
+      <StoryMeta class="meta" firstName={firstName} lastName={lastName} year={year} organ={organ} date={date} topColor="var(--top-color)" bottomColor="var(--bottom-color)" client:load>
+        {title ? title : null}
       </StoryMeta>
 
 			<section id="Story" class="story__content">
-        {@html story}
+        <Fragment set:html={story}/>
       </section>
 
 		</div>
 	</div>
 
-  <Footer {...$colors}></Footer>
+  <Footer topColor="var(--top-color)" bottomColor="var(--bottom-color)"></Footer>
 
 </article>
+
+<script>
+  import { animateColors } from '$components/utils/colors.js';
+  import state from '$components/utils/state.js';
+
+  const img = document.getElementById('image');
+
+  state.subscribe((value) => {
+    if (value.image) {img.setAttribute('src', value.image)}
+    // if (value.firstName)
+  });
+
+  const animation = animateColors({ el: document.querySelector('#story'), offset: 2 });
+  if (typeof window !== 'undefined') window.ANIM = animation;
+</script>
 
 <style lang="scss">
   @import 'src/styles/_functions.scss';

@@ -10,17 +10,18 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/svelte": "^0.5.1",
+    "@astrojs/svelte": "^1.0.0",
     "@contentful/rich-text-html-renderer": "^15.13.1",
-    "astro": "^1.0.0-rc.2",
+    "astro": "^1.0.2",
     "dotenv": "^16.0.1",
     "node-fetch": "^3.2.10",
     "qrcode": "^1.5.1",
-    "sass": "^1.54.0",
+    "sass": "^1.54.4",
     "simple-contentful-fetch": "file:scripts/simple-contentful-fetch"
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "motion": "^10.13.2",
     "svelte": "^3.49.0"
   }
 }

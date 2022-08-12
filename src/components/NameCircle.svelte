@@ -92,7 +92,7 @@
   </g>
 
   <svg class={`text ${textClass}`} viewBox="0 0 100 100" width="80" height="80" x="10" y="11">
-    <g class="text__wrapper" fill="white" width="100">
+    <g class="text__wrapper" fill="var(--top-color)" width="100">
       {#if firstName}<text x="50" y={twoLines ? 25 : 32} text-anchor="middle" class="text__first-name">{firstName}</text>{/if}
       {#if lastName}
         {#each lastName as name, i }

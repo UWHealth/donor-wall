@@ -1,7 +1,16 @@
-// @import url("https://use.typekit.net/saq6crj.css");
-
 @import '_functions.scss';
 @import '_reset.scss';
+
+@property --bottom-color {
+  syntax: '<color>';
+  inherits: true;
+  initialValue: "green";
+}
+@property --top-color {
+  syntax: '<color>';
+  inherits: true;
+  initialValue: "blue";
+}
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -19,6 +28,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
 
 body {
   font-family: 'proxima-nova';
