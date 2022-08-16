@@ -20,7 +20,7 @@ All items in state will also show up in the url, and can be set via the url.  --
 
 **Colors**
 A two-key object controls the gradients on most pages. The object contains `topColor` and `bottomColor` keys, which are being set via an animation.
-The animation (using [`animejs`](https://animejs.com)) uses a set of 8 pre-defined colors to animate between (defined in `components/utils/colors.js`).
+The animation (using the web animation API) uses a set of 8 pre-defined colors to animate between (defined in `components/utils/colors.js`).
 
 The colors object is wrapped in a Svelte store, which allows parts of the page to subscribe to its updates (via `subscribe` method). 
 It's also possible to get the current set of colors using the global `COLORS` method (or `get` if you've imported `colors.js`).
@@ -36,7 +36,8 @@ CONTENTFUL_ENV  # Contentful branch
 CONTENTFUL_SPACE_ID  # Contentful space ID
 CONTENTFUL_ACCESSTOKEN # Contentful API key
 CONTENTFUL_CONTENT_TYPE # Contentful entry ID
-CONTENT_OUT_PATH  # relative path for where to store fetched JSON
+CONTENT_OUT_PATH  # relative path for where to store fetched 
+SEARCH_APP_URL    # Full url for search application. Used to generate a QR Code
 ```
 
 ### Scripts reference

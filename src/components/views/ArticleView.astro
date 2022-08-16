@@ -4,7 +4,7 @@
   import Footer from '$components/Footer.svelte';
   import { colorSet } from '$components/utils/colors';
 
-  const { title, firstName, lastName, year, organ, date, story, image = defaultImage } = Astro.props;
+  const { title, firstName, lastName, year, organ, date, story, qrCode=`${import.meta.env.BASE_URL}qr-code.png`, image = defaultImage } = Astro.props;
 
 ---
 
@@ -28,7 +28,7 @@
 		</div>
 	</div>
 
-  <Footer topColor="var(--top-color)" bottomColor="var(--bottom-color)"></Footer>
+  <Footer topColor="var(--top-color)" qrCode={qrCode} bottomColor="var(--bottom-color)"></Footer>
 
 </article>
 
@@ -40,7 +40,6 @@
 
   state.subscribe((value) => {
     if (value.image) {img.setAttribute('src', value.image)}
-    // if (value.firstName)
   });
 
   const animation = animateColors({ el: document.querySelector('#story'), offset: 2 });

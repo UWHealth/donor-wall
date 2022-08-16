@@ -38,5 +38,6 @@ const { firstName, lastName, title, story, image, organ, year } = Astro.props;
     image={image}
     title={title}
     story={story}
+    qrCode={`${import.meta.env.BASE_URL}qr-code.png`}
   />
 </Layout>

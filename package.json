@@ -12,16 +12,15 @@
   "devDependencies": {
     "@astrojs/svelte": "^1.0.0",
     "@contentful/rich-text-html-renderer": "^15.13.1",
-    "astro": "^1.0.2",
+    "astro": "^1.0.6",
     "dotenv": "^16.0.1",
+    "html-import": "^1.0.1",
     "node-fetch": "^3.2.10",
     "qrcode": "^1.5.1",
     "sass": "^1.54.4",
     "simple-contentful-fetch": "file:scripts/simple-contentful-fetch"
   },
   "dependencies": {
-    "animejs": "^3.2.1",
-    "motion": "^10.13.2",
     "svelte": "^3.49.0"
   }
 }

@@ -125,9 +125,9 @@
     filter: brightness(0.7) contrast(400%) saturate(.9) opacity(7%);
   }
 
-  .streak-img--faint + .streak-img--faint {
-    animation-delay: 0s, 0s;
-  }
+  // .streak-img--faint + .streak-img--faint {
+  //   animation-delay: 0s, 0s;
+  // }
 
   .streak-img--underlay {
     mix-blend-mode: hard-light;

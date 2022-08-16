@@ -14,6 +14,7 @@
   export let date = '';
   export let story = '';
   export let image = defaultImage;
+  export let qrCode = '';
 
   function cycleColors(node) {
     const animation = animateColors({el: node, offset: 2});
@@ -63,7 +64,7 @@
 		</div>
 	</div>
 
-  <Footer topColor="var(--top-color)" bottomColor="var(--bottom-color)"></Footer>
+  <Footer topColor="var(--top-color)" bottomColor="var(--bottom-color)" qrCode={qrCode}></Footer>
 
 </article>
 

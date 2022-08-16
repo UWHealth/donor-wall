@@ -1,12 +1,12 @@
 import fs from 'fs-extra';
 import path from 'path';
 import contentful from 'contentful';
-import * as url from 'url';
 import 'dotenv/config';
-import { write } from 'fs';
 
-const __filename = url.fileURLToPath(import.meta.url);
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+// import * as url from 'url';
+// const __filename = url.fileURLToPath(import.meta.url);
+// const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
 
 if (
   !process.env.CONTENTFUL_ACCESSTOKEN ||
@@ -28,7 +28,7 @@ const client = contentful.createClient({
 });
 
 const getContentfulEntries = (
-  { content_type = "pagePatientStory", ...options },
+  { content_type = "summaryPatientStory", ...options },
   out = "./content.json",
   callback = () => {}
 ) => {
@@ -51,8 +51,8 @@ const getContentfulEntries = (
       content_type,
       ...options
     })
-    .then((contentType) => {
-      const updatedContent = typeof callback === 'function' ? callback(contentType) : contentType;
+    .then(async (contentType) => {
+      const updatedContent = typeof callback === 'function' ? await callback(contentType) : contentType;
 
       writeOut(updatedContent);
     })
