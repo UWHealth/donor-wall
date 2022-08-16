@@ -61,9 +61,9 @@ const pruneContentfulResponse = (data) => {
     const { firstName, lastName, body, image, slug, year, organ, title } = entry.fields;
     const story = documentToHtmlString(body);
     const url = 'https://www.uwhealth.org/patient-stories/' + slug;
-    const { url:imgUrl, width, height} = parseImage(image);
-    const imageIsTall = width <= height;
-    const imageUrl = imgUrl.replace('http://', 'https://');
+    const file = parseImage(image);
+    const imageIsTall = file?.width <= file?.height;
+    const imageUrl = file?.url?.replace('http://', 'https://');
     const imagePath = path.resolve(IMAGES_PATH, path.basename(imageUrl, '.jpg') + '.jpg');
 
 
