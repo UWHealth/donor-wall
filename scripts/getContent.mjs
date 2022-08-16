@@ -22,7 +22,7 @@ const IMAGES_PATH = path.resolve(PUBLIC_PATH, './content/images');
  * @param {Object|null} image Image object from contentful
  * @returns {String}
  */
-const parseImage = (image) => image && image.fields && image.fields.file ? image.fields.file.url : '';
+const parseImage = (image) => image && image.fields && image.fields.file ? image.fields.file : '';
 
 /**
  * Fetches an image from the internet and saves it locally.
@@ -61,8 +61,11 @@ const pruneContentfulResponse = (data) => {
     const { firstName, lastName, body, image, slug, year, organ, title } = entry.fields;
     const story = documentToHtmlString(body);
     const url = 'https://www.uwhealth.org/patient-stories/' + slug;
-    const imageUrl = parseImage(image).replace('http://', 'https://');
+    const { url:imgUrl, width, height} = parseImage(image);
+    const imageIsTall = width <= height;
+    const imageUrl = imgUrl.replace('http://', 'https://');
     const imagePath = path.resolve(IMAGES_PATH, path.basename(imageUrl, '.jpg') + '.jpg');
+
 
     if (imageUrl) fetchImage(imageUrl, imagePath);
 
@@ -72,6 +75,7 @@ const pruneContentfulResponse = (data) => {
       lastName,
       year,
       organ,
+      imageIsTall,
       story,
       image: '/' + path.posix.relative(PUBLIC_PATH, imagePath),
       url,
@@ -101,7 +105,7 @@ const pruneContentfulResponse = (data) => {
     if (!process.env.SEARCH_APP_URL) console.log(`Missing SEARCH_APP_URL environment variable. Defaulting to "${QR_URL}".`);
     console.log('Writing QR Code, using "', QR_URL, '"');
 
-    await QRCode.toFile(qrOut, QR_URL, {type: 'png', width: 800})
+    await QRCode.toFile(qrOut, QR_URL, {type: 'png', width: 800, margin: 1})
       .catch(e => {
         console.log('Error writing QR code to '+ qrOut);
         console.log(e);

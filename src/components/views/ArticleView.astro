@@ -4,14 +4,15 @@
   import Footer from '$components/Footer.svelte';
   import { colorSet } from '$components/utils/colors';
 
-  const { title, firstName, lastName, year, organ, date, story, qrCode=`${import.meta.env.BASE_URL}qr-code.png`, image = defaultImage } = Astro.props;
+  const { title, firstName, lastName, year, organ, date, story, qrCode=`${import.meta.env.BASE_URL}qr-code.png`, image = defaultImage, imageIsTall = false } = Astro.props;
 
 ---
 
 <article id="story" class="story" style={`--bottom-color: ${colorSet[0]}; --top-color: ${colorSet[1]}`}>
 
   <div class="story__container">
-		<div class="cover">
+		<div class="cover" class:list={[imageIsTall && 'tall-cover']}>
+      <img id="Image" alt="" class="cover__bg" src={image} />
       <img id="Image" alt="" class="cover__img" src={image} />
     </div>
 
@@ -74,18 +75,36 @@
 
   .cover {
     aspect-ratio: 8/6;
-    width: 100%;
     animation: fade-in var(--animation-length) ease-out normal both;
     overflow: hidden;
+    background-repeat: no-repeat;
+    position: relative;
   }
 
   .cover__img {
     display: block;
     max-width: 100%;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     object-fit: cover;
     transform: scale(1.1);
+    object-position: 50%;
+    animation: shrink-in calc(var(--animation-length) * 4) ease-out normal forwards;
+  }
+
+  .tall-cover .cover__img {
+    object-fit: contain;
+  }
+
+  .cover__bg {
+    position: absolute;
+    object-position: 50%;
+    width: 110%;
+    min-height: 110%;
+    transform: scale(1.3);
+    left: -5%;
+    top: -10%;
+    filter: blur(30px) brightness(.6);
     animation: shrink-in calc(var(--animation-length) * 4) ease-out normal forwards;
   }
 
@@ -104,6 +123,7 @@
     line-height: rem($space);
     letter-spacing: 0.02em;
     padding-top: space(3);
+    padding-right: space(2);
     height: 100%;
     animation: fade-in calc(var(--animation-length) * .5) calc(var(--animation-length) * .75) ease-out normal both;
   }

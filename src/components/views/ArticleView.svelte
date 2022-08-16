@@ -15,6 +15,7 @@
   export let story = '';
   export let image = defaultImage;
   export let qrCode = '';
+  export let imageIsTall = false;
 
   function cycleColors(node) {
     const animation = animateColors({el: node, offset: 2});
@@ -48,6 +49,7 @@
 
   <div class="story__container">
 		<div class="cover">
+      <img alt="" class="cover__bg" src={image} />
       <img alt="" class="cover__img" src={image} />
     </div>
 
@@ -99,6 +101,7 @@
     width: 100%;
     animation: fade-in var(--animation-length) ease-out normal both;
     overflow: hidden;
+    position: relative;
   }
 
   .cover__img {
@@ -106,9 +109,17 @@
     max-width: 100%;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transform: scale(1.1);
     animation: shrink-in calc(var(--animation-length) * 4) ease-out normal forwards;
+  }
+
+  .cover__bg {
+    object-position: -87%;
+    width: 111%;
+    position: absolute;
+    min-height: 111%;
+    top: -10%;
   }
 
   :global(.meta) {
