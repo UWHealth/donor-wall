@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<link rel="icon" type="image/x-icon" href="/donor-wall/favicon.ico">
-    <title>Article View: MikeBradley</title>
+    <title>Article View: MarieGanser</title>
 		
     <script>
       window.CSS.registerProperty({
@@ -20,133 +20,41 @@
         initialValue: "red"
       });
     </script>
-	<link rel="stylesheet" href="/donor-wall/assets/baf6c709.43ef9751.css" />
+	<link rel="stylesheet" href="/donor-wall/assets/baf6c709.844339cf.css" />
 <link rel="stylesheet" href="/donor-wall/assets/astro-article-_article_-astro-article-index-article-astro-name-name.ccbf68fd.css" />
 <link rel="stylesheet" href="/donor-wall/assets/astro-article-_article_-astro-article-index-article.19d2464e.css" />
-<link rel="stylesheet" href="/donor-wall/assets/astro-article-_article_-astro-article-index.47044b48.css" /><script type="module" src="/donor-wall/hoisted.4f82a859.js"></script></head>
+<link rel="stylesheet" href="/donor-wall/assets/astro-article-_article_-astro-article-index.b9b397f6.css" /><script type="module" src="/donor-wall/hoisted.2b509b50.js"></script></head>
 	<body class="astro-PSTXOTMS">
 		<main class="astro-PSTXOTMS" id="">
-      <article id="story" class="story astro-JWUSBZEQ" style="--bottom-color: #4572ab; --top-color: #45A3AB">
+      <article id="story" class="story astro-QKBCXSU6" style="--bottom-color: #4572ab; --top-color: #45A3AB">
 
-  <div class="story__container astro-JWUSBZEQ">
-		<div class="cover astro-JWUSBZEQ">
-      <img id="Image" alt="" class="cover__img astro-JWUSBZEQ" src="/content/images/7dQAoviqkHcN4MbHaY4DGG.jpg">
+  <div class="story__container astro-QKBCXSU6">
+		<div class="cover astro-QKBCXSU6">
+      <img id="Image" alt="" class="cover__bg astro-QKBCXSU6" src="/content/images/7c1oYwOTNZK3e3oBvUZwTV.jpg">
+      <img id="Image" alt="" class="cover__img astro-QKBCXSU6" src="/content/images/7c1oYwOTNZK3e3oBvUZwTV.jpg">
     </div>
 
-		<div id="Content" class="row astro-JWUSBZEQ">
+		<div id="Content" class="row astro-QKBCXSU6">
 
-      <style>astro-island,astro-slot{display:contents}</style><script>(self.Astro = self.Astro || {}).load = (getHydrateCallback) => {
-  (async () => {
-    let hydrate = await getHydrateCallback();
-    await hydrate();
-  })();
-};var _a;
-{
-  const propTypes = {
-    0: (value) => value,
-    1: (value) => JSON.parse(value, reviver),
-    2: (value) => new RegExp(value),
-    3: (value) => new Date(value),
-    4: (value) => new Map(JSON.parse(value, reviver)),
-    5: (value) => new Set(JSON.parse(value, reviver)),
-    6: (value) => BigInt(value),
-    7: (value) => new URL(value)
-  };
-  const reviver = (propKey, raw) => {
-    if (propKey === "" || !Array.isArray(raw))
-      return raw;
-    const [type, value] = raw;
-    return type in propTypes ? propTypes[type](value) : void 0;
-  };
-  if (!customElements.get("astro-island")) {
-    customElements.define(
-      "astro-island",
-      (_a = class extends HTMLElement {
-        constructor() {
-          super(...arguments);
-          this.hydrate = () => {
-            if (!this.hydrator || this.parentElement?.closest("astro-island[ssr]")) {
-              return;
-            }
-            const slotted = this.querySelectorAll("astro-slot");
-            const slots = {};
-            const templates = this.querySelectorAll("template[data-astro-template]");
-            for (const template of templates) {
-              if (!template.closest(this.tagName)?.isSameNode(this))
-                continue;
-              slots[template.getAttribute("data-astro-template") || "default"] = template.innerHTML;
-              template.remove();
-            }
-            for (const slot of slotted) {
-              if (!slot.closest(this.tagName)?.isSameNode(this))
-                continue;
-              slots[slot.getAttribute("name") || "default"] = slot.innerHTML;
-            }
-            const props = this.hasAttribute("props") ? JSON.parse(this.getAttribute("props"), reviver) : {};
-            this.hydrator(this)(this.Component, props, slots, {
-              client: this.getAttribute("client")
-            });
-            this.removeAttribute("ssr");
-            window.removeEventListener("astro:hydrate", this.hydrate);
-            window.dispatchEvent(new CustomEvent("astro:hydrate"));
-          };
-        }
-        connectedCallback() {
-          if (!this.hasAttribute("await-children") || this.firstChild) {
-            this.childrenConnectedCallback();
-          } else {
-            new MutationObserver((_, mo) => {
-              mo.disconnect();
-              this.childrenConnectedCallback();
-            }).observe(this, { childList: true });
-          }
-        }
-        async childrenConnectedCallback() {
-          window.addEventListener("astro:hydrate", this.hydrate);
-          await import(this.getAttribute("before-hydration-url"));
-          const opts = JSON.parse(this.getAttribute("opts"));
-          Astro[this.getAttribute("client")](
-            async () => {
-              const rendererUrl = this.getAttribute("renderer-url");
-              const [componentModule, { default: hydrator }] = await Promise.all([
-                import(this.getAttribute("component-url")),
-                rendererUrl ? import(rendererUrl) : () => () => {
-                }
-              ]);
-              this.Component = componentModule[this.getAttribute("component-export") || "default"];
-              this.hydrator = hydrator;
-              return this.hydrate;
-            },
-            opts,
-            this
-          );
-        }
-        attributeChangedCallback() {
-          if (this.hydrator)
-            this.hydrate();
-        }
-      }, _a.observedAttributes = ["props"], _a)
-    );
-  }
-}</script><astro-island uid="TodOV" component-url="/donor-wall/StoryMeta.c7027780.js" component-export="default" renderer-url="/donor-wall/client.b27523fa.js" props="{&quot;class&quot;:[0,&quot;meta astro-JWUSBZEQ&quot;],&quot;firstName&quot;:[0,&quot;Mike&quot;],&quot;lastName&quot;:[0,&quot;Bradley&quot;],&quot;year&quot;:[0,null],&quot;organ&quot;:[0,null],&quot;date&quot;:[0,null],&quot;topColor&quot;:[0,&quot;var(--top-color)&quot;],&quot;bottomColor&quot;:[0,&quot;var(--bottom-color)&quot;]}" ssr="" client="load" before-hydration-url="data:text/javascript;charset=utf-8,//[no before-hydration script]" opts="{&quot;name&quot;:&quot;StoryMeta&quot;,&quot;value&quot;:true}" await-children=""><section class="meta meta astro-JWUSBZEQ svelte-128zb44"><div id="Circle" class="circle svelte-128zb44"><svg class="graphic circle__img svelte-1aoszpq" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><defs><clipPath id="clippath"><circle cx="50" cy="50" r="45" fill="none"></circle></clipPath><filter id="glass_filter"><feTurbulence type="fractalNoise" baseFrequency="0.04 0.04" numOctaves="14" seed="23" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence"></feTurbulence><feMorphology operator="dilate" radius="3 3" x="0%" y="0%" width="100%" height="100%" in="turbulence" result="morphology"></feMorphology><feDisplacementMap in="SourceGraphic" in2="morphology" scale="25" xChannelSelector="R" yChannelSelector="B" x="9%" y="10%" width="100%" height="100%" result="displacementMap"></feDisplacementMap><feSpecularLighting surfaceScale="4" specularConstant="1.4" specularExponent="72" x="0%" y="0%" id="lighting-color" in="turbulence" lighting-color="var(--top-color)" width="100%" height="100%" result="specularLighting1"><fePointLight x="50" y="0" z="800"></fePointLight></feSpecularLighting><feGaussianBlur stdDeviation=".5" x="0%" y="0%" width="300%" height="300%" in="specularLighting1" edgeMode="duplicate" result="blur1"></feGaussianBlur><feFlood id="base-color" flood-color="var(--bottom-color)" flood-opacity="1" x="0%" y="0%" width="100%" height="100%" result="flood"></feFlood><feBlend mode="screen" x="0%" y="0%" width="100%" height="100%" in="specularLighting" in2="flood" result="blend"></feBlend><feBlend mode="soft-light" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" in2="blend" result="blend1"></feBlend></filter></defs><circle class="circle-stroke svelte-1aoszpq" cx="50" cy="50" r="45.75" stroke="white" stroke-width="3"></circle><g clip-path="url(#clippath)" class="glass"><image clip-path="url(#clippath)" x="-100" y="-355" class="glass__bg svelte-1aoszpq" width="300" height="800" style="opacity: .9" xlink:href="/donor-wall/assets/streaks-small.efa45366.jpg" filter="url(#glass_filter)"></image><image clip-path="url(#clippath)" x="-50" y="-50" class="glass__front svelte-1aoszpq" width="300" height="300" xlink:href="/donor-wall/assets/glass-front-bw.adf7dd2b.webp"></image></g><svg class="text  svelte-1aoszpq" viewBox="0 0 100 100" width="80" height="80" x="10" y="11"><g class="text__wrapper svelte-1aoszpq" fill="var(--top-color)" width="100"><text x="50" y="32" text-anchor="middle" class="text__first-name svelte-1aoszpq">Mike</text><text text-anchor="middle" class="text__last-name svelte-1aoszpq" x="50" y="59" textLength="70" lengthAdjust="spacing">Bradley</text><text dx="50" y="78" textLength="35" text-anchor="middle" class="text__year">2022</text></g></svg></svg></div>
+      <style>astro-island,astro-slot{display:contents}</style><script>(self.Astro=self.Astro||{}).load=a=>{(async()=>await(await a())())()};var a;{const l={0:t=>t,1:t=>JSON.parse(t,n),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(JSON.parse(t,n)),5:t=>new Set(JSON.parse(t,n)),6:t=>BigInt(t),7:t=>new URL(t)},n=(t,r)=>{if(t===""||!Array.isArray(r))return r;const[s,i]=r;return s in l?l[s](i):void 0};customElements.get("astro-island")||customElements.define("astro-island",(a=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=()=>{if(!this.hydrator||this.parentElement?.closest("astro-island[ssr]"))return;const r=this.querySelectorAll("astro-slot"),s={},i=this.querySelectorAll("template[data-astro-template]");for(const e of i)!e.closest(this.tagName)?.isSameNode(this)||(s[e.getAttribute("data-astro-template")||"default"]=e.innerHTML,e.remove());for(const e of r)!e.closest(this.tagName)?.isSameNode(this)||(s[e.getAttribute("name")||"default"]=e.innerHTML);const o=this.hasAttribute("props")?JSON.parse(this.getAttribute("props"),n):{};this.hydrator(this)(this.Component,o,s,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),window.removeEventListener("astro:hydrate",this.hydrate),window.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((r,s)=>{s.disconnect(),this.childrenConnectedCallback()}).observe(this,{childList:!0})}async childrenConnectedCallback(){window.addEventListener("astro:hydrate",this.hydrate),await import(this.getAttribute("before-hydration-url"));const r=JSON.parse(this.getAttribute("opts"));Astro[this.getAttribute("client")](async()=>{const s=this.getAttribute("renderer-url"),[i,{default:o}]=await Promise.all([import(this.getAttribute("component-url")),s?import(s):()=>()=>{}]),e=this.getAttribute("component-export")||"default";if(!e.includes("."))this.Component=i[e];else{this.Component=i;for(const c of e.split("."))this.Component=this.Component[c]}return this.hydrator=o,this.hydrate},r,this)}attributeChangedCallback(){this.hydrator&&this.hydrate()}},a.observedAttributes=["props"],a))}</script><astro-island uid="Z9Clnd" component-url="/donor-wall/StoryMeta.fc508624.js" component-export="default" renderer-url="/donor-wall/client.b27523fa.js" props="{&quot;class&quot;:[0,&quot;meta astro-QKBCXSU6&quot;],&quot;firstName&quot;:[0,&quot;Marie&quot;],&quot;lastName&quot;:[0,&quot;Ganser&quot;],&quot;year&quot;:[0,2018],&quot;organ&quot;:[0,null],&quot;date&quot;:[0,null],&quot;topColor&quot;:[0,&quot;var(--top-color)&quot;],&quot;bottomColor&quot;:[0,&quot;var(--bottom-color)&quot;]}" ssr="" client="load" before-hydration-url="data:text/javascript;charset=utf-8,//[no before-hydration script]" opts="{&quot;name&quot;:&quot;StoryMeta&quot;,&quot;value&quot;:true}" await-children=""><section class="meta meta astro-QKBCXSU6 svelte-128zb44"><div id="Circle" class="circle svelte-128zb44"><svg class="graphic circle__img svelte-1aoszpq" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><defs><clipPath id="clippath"><circle cx="50" cy="50" r="45" fill="none"></circle></clipPath><filter id="glass_filter"><feTurbulence type="fractalNoise" baseFrequency="0.04 0.04" numOctaves="14" seed="23" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence"></feTurbulence><feMorphology operator="dilate" radius="3 3" x="0%" y="0%" width="100%" height="100%" in="turbulence" result="morphology"></feMorphology><feDisplacementMap in="SourceGraphic" in2="morphology" scale="25" xChannelSelector="R" yChannelSelector="B" x="9%" y="10%" width="100%" height="100%" result="displacementMap"></feDisplacementMap><feSpecularLighting surfaceScale="4" specularConstant="1.4" specularExponent="72" x="0%" y="0%" id="lighting-color" in="turbulence" lighting-color="var(--top-color)" width="100%" height="100%" result="specularLighting1"><fePointLight x="50" y="0" z="800"></fePointLight></feSpecularLighting><feGaussianBlur stdDeviation=".5" x="0%" y="0%" width="300%" height="300%" in="specularLighting1" edgeMode="duplicate" result="blur1"></feGaussianBlur><feFlood id="base-color" flood-color="var(--bottom-color)" flood-opacity="1" x="0%" y="0%" width="100%" height="100%" result="flood"></feFlood><feBlend mode="screen" x="0%" y="0%" width="100%" height="100%" in="specularLighting" in2="flood" result="blend"></feBlend><feBlend mode="soft-light" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" in2="blend" result="blend1"></feBlend></filter></defs><circle class="circle-stroke svelte-1aoszpq" cx="50" cy="50" r="45.75" stroke="white" stroke-width="3"></circle><g clip-path="url(#clippath)" class="glass"><image clip-path="url(#clippath)" x="-100" y="-355" class="glass__bg svelte-1aoszpq" width="300" height="800" style="opacity: .9" xlink:href="/donor-wall/assets/streaks-small.efa45366.jpg" filter="url(#glass_filter)"></image><image clip-path="url(#clippath)" x="-50" y="-50" class="glass__front svelte-1aoszpq" width="300" height="300" xlink:href="/donor-wall/assets/glass-front-bw.adf7dd2b.webp"></image></g><svg class="text  svelte-1aoszpq" viewBox="0 0 100 100" width="80" height="80" x="10" y="11"><g class="text__wrapper svelte-1aoszpq" fill="var(--top-color)" width="100"><text x="50" y="32" text-anchor="middle" class="text__first-name svelte-1aoszpq">Marie</text><text text-anchor="middle" class="text__last-name svelte-1aoszpq" x="50" y="59" textLength="60" lengthAdjust="spacing">Ganser</text><text dx="50" y="78" textLength="35" text-anchor="middle" class="text__year">2018</text></g></svg></svg></div>
 
-  <div class="meta__container svelte-128zb44"><div id="Name" class="meta__title svelte-128zb44"><astro-slot>Major recovery after stroke has Mike enjoying life again</astro-slot></div>
+  <div class="meta__container svelte-128zb44"><div id="Name" class="meta__title svelte-128zb44"><astro-slot>Marie helps a stranger return to a normal life</astro-slot></div>
 
     <div id="Organ" class="meta__organ svelte-128zb44"></div>
 
     <div id="Date" class="meta__date"></div></div>
 </section></astro-island>
 
-			<section id="Story" class="story__content astro-JWUSBZEQ">
-        <p>A highly accomplished product manager for a scientific instrument company, Mike Bradley of Fitchburg, Wis. remembers the day he went  back to work in January 2019, just after the winter holidays. To say the day did not go as planned would be a huge understatement.</p><p>First, Mike’s right eye went dark. Next, he could not move several muscles normally. Finally, he collapsed to the floor. Mike didn’t know it at the time, but he was having a serious stroke at the age of 59. </p><p>After first responders arrived, nobody knew for sure if they would ever see Mike at work or perhaps ever again. If there was a promising sign, however, he still displayed his wicked sense of humor as he was being carted off to an ambulance.</p><p>“I waved to everyone and said it was just a performance review that went badly,” he says, nearly 3 ½ years later.</p><p>The blood clot that caused Mike’s stroke originated in his right carotid artery, one of two vessels on either side of the neck that carry blood to the brain, neck and face. Because the layers of the artery wall were tearing, a blockage formed that reduced the amount of blood flowing to the brain.</p><p>In circumstances like Mike’s, the body often compensates by making use of other blood vessels to send blood to the brain. He was recovering at UW Health’s Rehabilitation Hospital on Madison’s East Side when he suffered a second stroke just 12 days after the first one.</p><p>This time, he lost all sensation on his left side. After being rushed to University Hospital, imaging showed that the clot intensified, preventing any blood from reaching the right side of his brain. Immediate action was needed, and if you’re in Mike’s predicament, the best news you can hear is that UW Health neurosurgeon Mustafa K. Baskaya, MD, is on the way to operate.</p><p>As Mike put it, “The world comes to Baskaya,” which is not much of an exaggeration. He operates on the brains and spines of many patients from near and far, many of whom have been told there is nothing more that can be done for them. </p><h2>Rare emergency brain surgery needed</h2><p>Mike was quickly taken to the operating room where Dr. Baskaya performed what is called an extracranial-to-intercranial (EC-IC) bypass. Not unlike a heart bypass, the EC-IC bypass creates a new passageway for blood to reach the brain through borrowing a small piece of artery from a different place in the body.</p><p>In Mike’s case, Dr. Baskaya took a section of Mike’s superficial temporal artery from Mike’s forehead to create the bypass.  </p><p>“EC-IC bypass is not a common surgery,” says Dr. Baskaya. “I do about 10 to 20 a year. Anyone who needs this procedure should have it performed at a center like ours where our team has extensive experience. This involves maneuvering blood vessels too small to be seen with the naked eye, so special operating rooms and equipment are needed to ensure the best outcome.”</p><p>After 10 days in the hospital, Mike returned to UW Health’s Rehab Hospital, where he would spend four more weeks re-acquiring the physical and cognitive skills that were impacted by the stroke.</p><p>“It’s a long process to begin reconnecting with the life you were used to,” Mike says. “Fortunately, I had three outstanding therapists at the Rehab Hospital help me with things like walking, cooking, dressing myself, making my bed and so many other things most of us take for granted. I’m also not much of a physical specimen so it was important both personally and professionally that my grey matter would function well enough for me to return to work.”</p><h2>Emotional swings affect Mike </h2><p>Some stroke patients find themselves more vulnerable to emotional swings, and Mike was no exception.</p><p>“Most of us have an internal check that helps control our emotions,” he says. “Mine disappeared after the stroke, so now I cry easily at the smallest provocation. It makes me self-conscious at times, but my therapists were incredibly supportive when the tears would start flowing.”</p><p>According to UW Health occupational therapist Carrin Lichty, many stroke patients deal with emotional swings, increased anxiety or depression. </p><p>“Some patients who never cried before their stroke suddenly start to cry at the tiniest things, be they sad or happy. Therapists often support the emotional changes that a patient experiences after a stroke. Sometimes just listening to patients, validating what they are experiencing, and providing reassurance can make a big difference in their therapy.”</p><p>Sara Garvin, Mike’s physical therapist, says it often helps to break recovery goals into smaller, digestible pieces. </p><p>“We might say, ‘Let’s start by getting you home’ as the first goal,” Sara says. “Once you get home, you can start focusing on next steps such as driving, getting back to work, or resuming hobbies.”</p><h2>Support group reduces isolation </h2><p>Many people find that talking with and listening to other stroke patients helps make them feel less isolated. Mike was among those who took advantage of a monthly <a href="https://patient.uwhealth.org/education/virtual-madison-area-stroke-and-aneurysm-support-group">UW Health/UnityPoint Health – Meriter Stroke and Aneurysm Support Group</a> that is open to patients and their family members. </p><p>In-person meetings were the norm for years, but the group switched to online gatherings about two years ago with the onset of COVID-19. Fortunately, the virtual meetings allow for easier access, saving patients or family members the worry of driving to University Hospital.</p><p>“Mike attended our meetings regularly for quite a while,” says Melanie McCauley, RN, who coordinates the support group. “He is a wonderful, charismatic person who has come a long way and helps others by talking very openly and philosophically about how his life has been impacted by a stroke.”</p><p>As for advice to others, Mike points out that every minute is precious at the onset of a stroke. “Even if you are not sure if someone is having a stroke, don’t think twice about calling 911 because brain cells may be dying every minute.”</p><p>Married for 36 years to his wife Kathryn with two grown children, Mike can’t overstate how grateful he is to the UW Health Stroke Team not only for saving his life but helping him reach so many of his goals physically and emotionally. </p><p>“My biggest hurdle can be my own impatience,” Mike says. “It was very frustrating at first trying and failing at simple tasks like filling out a grocery form. Madison, my speech therapist, kept telling me to slow down, but slowing things down goes against my natural instinct.”</p><p>While no one would choose to go through what Mike did, he can’t say enough about the care he received from his doctors, nurses and therapists.</p><p>“The day I checked out, I wept and wept knowing they would not be there anymore,” says Mike, now 63. “All things considered, I know how lucky I am to be around to share my story and continue finding joy in life.”</p>
+			<section id="Story" class="story__content astro-QKBCXSU6">
+        <p>Marie first started thinking about organ donation after a discussion with her friend Larry at a Super Bowl party in 2018. Larry had donated one of his kidneys on behalf of a family friend. After meeting another organ donor at the gym, Marie made the decision to become an altruistic kidney donor. </p><p>Marie asked her friend, Mary Nachreiner, then employed at UW Organ and Tissue Donation, if she knew anyone who needed a kidney. Mary did: Sara, the sister of a co-worker, was suffering from polycystic kidney disease and needed a transplant. Marie decided to direct her donation to Sara but wasn’t a match, so she and Sara became part of an eight-person kidney exchange in which Marie&#39;s kidney went to a man named Paul, from Michigan, and Sara received a kidney from another donor. </p><p>Since giving the gift of life, Marie has been in contact with Paul, who is back to bowling, walking and living a normal life. “I feel so lucky to have been given this opportunity,” says Marie.</p>
       </section>
 
 		</div>
 	</div>
 
   <div class="shadow svelte-hxrkwh" style="--color-1: var(--bottom-color); --color-2: var(--top-color);"></div>
-<footer class="astro-JWUSBZEQ svelte-hxrkwh" style="--color-1: var(--bottom-color); --color-2: var(--top-color);"><div class="content content--left svelte-hxrkwh">Use your phone&#39;s camera To scan the qr code</div>
-  <div class="qrcode svelte-hxrkwh"><div class="qrcode__container svelte-hxrkwh"><img class="qrcode__img svelte-hxrkwh" alt="" src="/donor-wall/assets/uwhorg-qr.ba8c0c85.png"></div></div>
+<footer class="astro-QKBCXSU6 svelte-hxrkwh" style="--color-1: var(--bottom-color); --color-2: var(--top-color);"><div class="content content--left svelte-hxrkwh">Use your phone&#39;s camera To scan the qr code</div>
+  <div class="qrcode svelte-hxrkwh"><div class="qrcode__container svelte-hxrkwh"><img class="qrcode__img svelte-hxrkwh" alt="" src="/donor-wall/qr-code.png"></div></div>
   <div class="content content--right svelte-hxrkwh">View legacy donors, read stories, donate, and more</div>
 </footer>
 
