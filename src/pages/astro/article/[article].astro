@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 
   return items.map((article, i) => {
     const {name, intro,...rest} = article;
-    const [firstName, lastName] = rest.firstName && rest.lastName ? [rest.firstName, rest.lastName] : name[0].split(' ');
+    const [firstName, lastName] = name?.[0] && name[0].split(' ');
 
     return {
       params: { article: `${i}` },

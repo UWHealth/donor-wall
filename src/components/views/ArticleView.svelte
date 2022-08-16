@@ -48,7 +48,7 @@
 <article class="story" use:cycleColors >
 
   <div class="story__container">
-		<div class="cover">
+		<div class="cover" class:tall-cover={imageIsTall}>
       <img alt="" class="cover__bg" src={image} />
       <img alt="" class="cover__img" src={image} />
     </div>
@@ -109,9 +109,13 @@
     max-width: 100%;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     transform: scale(1.1);
     animation: shrink-in calc(var(--animation-length) * 4) ease-out normal forwards;
+  }
+
+  .tall-cover .cover__img {
+    object-fit: contain;
   }
 
   .cover__bg {
