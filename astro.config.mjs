@@ -14,7 +14,18 @@ export default defineConfig({
     svelte(), // Enable Svelte to support Svelte components.
   ],
   output: 'static',
-  vite: { build: { minify: false }},
+  vite: {
+    build: {
+      minify: false,
+      rollupOptions: {
+        output: {
+          chunkFileNames: '[name].js',
+          entryFileNames: '[name].js',
+          assetFileNames: 'assets/[name][extname]'
+        }
+      }
+    }
+  },
   site: IS_GITHUB ? 'https://uwhealth.github.io' : IS_JENKINS ? 'https://uconnect.wisc.edu' : undefined,
   base: IS_GITHUB || IS_JENKINS ? '/donor-wall' : '',
 });
