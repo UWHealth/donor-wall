@@ -18,7 +18,7 @@
 
 :root {
   font-family: 'proxima-nova';
-  font-size: clamp(5px, calc(5px + #{strip($base - 5px)} * ( (100vw - 250px) / #{strip(1260px - 250px)}) ), #{$base});
+  // font-size: clamp(5px, calc(5px + #{strip($base - 5px)} * ( (100vw - 250px) / #{strip(1260px - 250px)}) ), #{$base});
   font-size: clamp(5px, 2.01vw, 50px);
   font-weight: 400;
 
