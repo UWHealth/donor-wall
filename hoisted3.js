@@ -1,0 +1,1 @@
+import{a as e}from"./colors.js";import{s as o}from"./state.js";import"./index.js";const i=document.getElementById("image");o.subscribe(t=>{t.image&&i.setAttribute("src",t.image)});const m=e({el:document.querySelector("#story"),offset:2});typeof window<"u"&&(window.ANIM=m);
