@@ -1,6 +1,6 @@
 ---
 import Layout from '$layouts/global.astro';
-import ArticleView from '$components/views/ArticleView.astro';
+import ArticleView from '$components/views/ArticleView.svelte';
 import fs from 'fs-extra';
 
 export async function getStaticPaths() {
@@ -40,5 +40,6 @@ const { firstName, lastName, title, story, image, organ, year, imageIsTall } = A
     story={story}
     imageIsTall={imageIsTall}
     qrCode={`${import.meta.env.BASE_URL}qr-code.png`}
+    client:load
   />
 </Layout>

@@ -124,6 +124,8 @@
     position: absolute;
     min-height: 111%;
     top: -10%;
+    left: -5%;
+    filter: blur(25px) brightness(.5) contrast(80%);
   }
 
   :global(.meta) {
@@ -141,6 +143,7 @@
     line-height: rem($space);
     letter-spacing: 0.02em;
     padding-top: space(3);
+    padding-right: space(2);
     height: 100%;
     animation: fade-in calc(var(--animation-length) * .5) calc(var(--animation-length) * .75) ease-out normal both;
   }

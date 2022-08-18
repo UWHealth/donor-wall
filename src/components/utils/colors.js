@@ -11,12 +11,30 @@ const colorArray = [
   "#736FA2", //purple
 ];
 
+/**
+ * Array of colors to be animated through.
+ * @see {@link colorArray}
+ */
 export const colorSet = [...colorArray];
 
+/**
+ * Animates `--top-color` and `--bottom-color` custom properties, by cycling through an array of colors.
+ * Optionally, the color arrays can be offset using ArrayRotate
+ * @see {@link arrayRotate}
+ * @param {Object} options
+ * @param {Node} options.el Element to apply animation to
+ * @param {Number} [options.offset] Where in the color array the animation should start from
+ * @param {Number} [options.duration] Duration of the animation cycle (in milliseconds)
+ * @param {String} [options.topColorProp] Custom property representing the top color
+ * @param {String} [options.topColorProp] Custom property representing the bottom color
+ * @returns {Object} Animation instance
+ */
 export const animateColors = ({
   el,
   offset = 0,
-  duration = 60000
+  duration = 60000,
+  topColorProp = '--top-color',
+  bottomColorProp = '--bottom-color'
 }) => {
 
   if (typeof window === 'undefined') return;
@@ -25,11 +43,11 @@ export const animateColors = ({
   const bottomColors = arrayRotate([...colorArray], offset + 1);
 
   return el.animate({
-    "--top-color": topColors,
-    "--bottom-color": bottomColors
-  }, {
-    duration: duration,
-    direction: 'alternate',
-    iterations: Infinity
-  });
+      [topColorProp]: topColors,
+      [bottomColorProp]: bottomColors
+    }, {
+      duration: duration,
+      direction: 'alternate',
+      iterations: Infinity
+    });
 }
