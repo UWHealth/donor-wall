@@ -6,8 +6,8 @@
 @using Microsoft.AspNetCore.Html
 
 @inject IDonorRequestService DonorRequestService -->
-
-<EditForm Model="@Model" OnValidSubmit="@HandleValidSubmit" class="SearchKeyword_searchForm__3w8P0 container position-relative px-0 SearchKeyword_hasInfoText__1QZUj">
+<main class="body">
+<!-- <EditForm Model="@Model" OnValidSubmit="@HandleValidSubmit" class="SearchKeyword_searchForm__3w8P0 container position-relative px-0 SearchKeyword_hasInfoText__1QZUj">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -20,7 +20,16 @@
         <InputText id="Lastname" @bind-Value="Model.Lastname" class="form-control" tabindex="2" />
     </div>
     <button type="submit" class="btn btn-primary" tabindex="3">Search</button>
-</EditForm>
+</EditForm>-->
+<form class="SearchKeyword_searchForm__3w8P0 container position-relative px-0 SearchKeyword_hasInfoText__1QZUj">
+    <!--!--><!--!-->
+    <ul class="validation-errors"><li class="validation-message">The Firstname field is required.</li><li class="validation-message">Another thing</li></ul>
+    <div class="form-input" b-4xg074dpd2=""><label for="Firstname" class="form-label" b-4xg074dpd2="">First Name</label>
+      <input id="Firstname" tabindex="1" class="form-control valid" _bl_d065c7b3-854e-42b4-9c81-c7053e9be65a=""></div>
+  <div class="form-input" b-4xg074dpd2=""><label for="Lastname" class="form-label" b-4xg074dpd2="">Last Name</label>
+      <input id="Lastname" tabindex="2" class="form-control valid" _bl_2d78dbfc-e0c2-44f8-a188-7baa503e52ee=""></div>
+  <button type="submit" class="btn btn-primary" tabindex="3" b-4xg074dpd2="">Search</button>
+</form>
 <!-- @if (Donors != null && Donors.Any())
 {
     var index = 1; -->
@@ -36,7 +45,7 @@
         <div class="mb-2">Result Count: @Donors.Count()</div>
         <div>
             <table class="table table-bordered" style="z-index: 99999;">
-                <tr>
+                <tr class="header">
                     <th style="width: 5em;">#</th>
                     <th>Last Name</th>
                     <th>First Name</th>
@@ -47,13 +56,21 @@
                 <!-- @foreach (var donor in Donors.OrderBy(x => x.Lastname).ThenBy(x => x.Firstname).ThenBy(x => x.TxpDate))
                 { -->
                     <tr>
-                        <td>@index</td>
-                        <td>@donor.Lastname.ToEmbeddedHighlightString(Model.Lastname)</td>
-                        <td>@donor.Firstname.ToEmbeddedHighlightString(Model.Firstname)</td>
-                        <td>@donor.Organ</td>
-                        <td>@donor.TxpDate.ToShortDateString()</td>
-                        <td><input type="button" class="btn btn-primary" @onclick="@(e => SelectDonor(donor))" value="Request" /></td>
+                        <td class="table-index">@index</td>
+                        <td class="table-firstname">@donor.Firstname.ToEmbeddedHighlightString(Model.Firstname)</td>
+                        <td class="table-lastname">@donor.Lastname.ToEmbeddedHighlightString(Model.Lastname)</td>
+                        <td class="table-organ">@donor.Organ</td>
+                        <td class="table-date">@donor.TxpDate.ToShortDateString()</td>
+                        <td class="table-action"><input type="button" class="btn btn-primary" @onclick="@(e => SelectDonor(donor))" value="Request" /></td>
                     </tr>
+                    <tr>
+                      <td class="table-index">2</td>
+                      <td class="table-firstname">Christopher</td>
+                      <td class="table-lastname">HansonLee</td>
+                      <td class="table-organ">Kidney</td>
+                      <td class="table-date">09/21/1900</td>
+                      <td class="table-action"><input type="button" class="btn btn-primary" @onclick="@(e => SelectDonor(donor))" value="Request" /></td>
+                  </tr>
 <!--
                     index++;
                 } -->
@@ -63,7 +80,7 @@
 <!-- }
 else
 { -->
-    <section id="TW0j26c9iGNZvB1ewG6Y3" class="ls SectionGeneral_ls__1T3bE">
+    <section id="TW0j26c9iGNZvB1ewG6Y3" class="ls SectionGeneral_ls__1T3bE table-wrapper">
          <h2 class="ls-header SectionIntro_headerText__24TpD">Search Results</h2>
           <table class="table table-bordered">
              <tr>
@@ -79,7 +96,7 @@ else
          </table>
     </section>
 <!-- } -->
-
+  </main>
     <div class="modal fade @modalActiveClass" id="exampleModalLive" aria-labelledby="exampleModalLiveLabel" style="display: block;" aria-modal="true" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
