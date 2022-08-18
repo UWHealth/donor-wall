@@ -3,7 +3,7 @@
   import state from '$components/utils/state.js';
 
   import NameCircle from '$components/NameCircle.svelte';
-  import StreakBg from '$components/StreakBg.svelte';
+  import StreakVideo from '$components/StreakVideo.svelte';
   import {animateColors} from "$components/utils/colors.js";
 
   export let firstName;
@@ -11,7 +11,7 @@
   export let year;
 
   function cycleColors(node) {
-    const animation = animateColors({el: node, offset: 2});
+    const animation = animateColors({el: node, offset: 1});
     window.ANIMATION = animation;
   }
 
@@ -26,15 +26,13 @@
     window.SET_STATE = state.set;
     window.GET_STATE = state.get;
     window.COLORS = colors.get;
+
+    return ()=> {}
   });
 </script>
 
-<svelte:head>
-  <title>Name View: {firstName} {lastName}</title>
-</svelte:head>
-
 <div class="root" use:cycleColors>
-  <StreakBg class="streak-container" topColor="var(--top-color)" bottomColor="var(--bottom-color)">
+  <StreakVideo class="streak-container" topColor="var(--top-color)" bottomColor="var(--bottom-color)">
     <NameCircle
       class="graphic--animation"
       lightColor="var(--top-color)"
@@ -43,12 +41,13 @@
       lastName={lastName}
       year={year}
     />
-  </StreakBg>
+  </StreakVideo>
 </div>
 
 <style>
   .root {
     animation: fade-in 5s ease-out normal both;
+    width: 100%;
   }
 
   .root :global(.streak-container) {
