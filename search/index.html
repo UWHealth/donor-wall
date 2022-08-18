@@ -1,16 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base href="~/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
-    <link href="css/site.css" rel="stylesheet" />
-    <link href="DonorWall.Lookup.styles.css" rel="stylesheet" />
-    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <base href="~/" /> -->
+    <link rel="stylesheet" href="/search-css/bootstrap/bootstrap.min.css">
+    <link href="/search-css/site.css" rel="stylesheet">
+    <link href="/search-css/DonorWall.Lookup.styles.css" rel="stylesheet">
+    <!-- <link href="../styles/search-style-updates.scss" rel="stylesheet"/> -->
+    <!-- <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" /> -->
+<link rel="stylesheet" href="/donor-wall/assets/search-index.css" /></head>
 <body>
-  <EditForm Model="@Model" OnValidSubmit="@HandleValidSubmit" class="SearchKeyword_searchForm__3w8P0 container position-relative px-0 SearchKeyword_hasInfoText__1QZUj">
+  <div><!-- @using DonorWall.Lookup.Models;
+@using Microsoft.Extensions.Options
+@inherits LayoutComponentBase
+@inject IOptionsMonitor<AppSettings> optionsMonitor;
+
+@{
+    var appSettings = optionsMonitor.CurrentValue;
+}
+
+<PageTitle>@appSettings.Title</PageTitle> -->
+<div data-testid="PageGeneral" class="page-2-col" >
+    <div data-testid="Layout-Wrapper" class="wrap">
+        <div data-testid="GlobalHeader" id="GlobalHeader" class="GlobalHeader_globalHeader__1iGVH GlobalHeader_primaryBgCoversMainNav__2rKLu" >
+            <nav data-testid="GlobalHeaderUtilityNav" class="GlobalHeader_utilityNav__26qyM" role="navigation" aria-label="Utility" data-coveo-index="false">
+                <div class="GlobalHeader_utilityNavRow__1c5qP d-none d-lg-flex pl-0" >
+                </div>
+            </nav>
+            <nav data-testid="GlobalHeaderMainNav" class="GlobalHeader_mainNav__2mdMH position-relative display-ui" role="navigation" aria-label="Main" data-coveo-index="false" itemtype="http://schema.org/WebSite">
+                <div class="GlobalHeader_mainNavRow__3larv row align-items-center h-100">
+                    <div class="GlobalHeader_mainNavColPrimary__2a9PF align-items-stretch align-items-lg-center h-100 col-auto col-lg-16 px-0 pl-lg-1 pl-xl-2">
+                        <a class="GlobalHeader_linkLogo__3-lSJ" data-testid="NextLink" href="/"><span class="innerWrap"><span data-testid="MediaSvg" class="GlobalHeader_imgLogo__2k0M0" ><img alt="UW Health Logo" src="//images.ctfassets.net/4yx69hifndy8/9CbsRSi2AJ5xqfEK3T7Dn/b500356767c466aee7c18f8edba48687/gfx_uwhealth-logo.svg" class="GlobalHeader_imgLogo__2k0M0"></span></span></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div data-testid="Layout-Hero" class="Hero_hero__3HVPD Hero_compact__1TgVI Hero_hasSearchForm__1Mi6d Hero_noImage__22I6D Hero_hasToc__6nxpy" >
+            <div class="Hero_wrapper__mcnbG" data-testid="Hero-Wrapper">
+                <div class="Hero_contentContainer__2pD9i container">
+                    <div class="Hero_contentRow__2R7sI row">
+                        <div class="Hero_contentCol__3TwFY d-flex col-22 col-md-18 col-lg-14">
+                            <svg viewBox="0 0 8 8" preserveAspectRatio="xMaxYMax slice" class="Hero_sm-contentBg__3f7YO">
+                                <path fill="white" d="M-3-4V8H6.87A.11.11,0,0,0,7,7.94L8,6.2V-4Z"></path>
+                                <polygon points="-1.82 6 3.78 -4 -3 -4 -3 6" class="Hero_sm-contentBgTop__1zjJ8"></polygon>
+                                <polygon points="3.25 8 -3 8 -3 -2.77" class="Hero_sm-contentBgBottom__h3KJa"></polygon>
+                            </svg>
+                            <div class="Hero_contentBody__282_b">
+                                <h1 class="Hero_headerTextContainer__mcFzG"><span data-testid="Hero-subheadlineText" class="Hero_subheadlineText__2jCni" >@appSettings.WelcomeHeader<span class="visually-hidden">: </span></span><span data-testid="Hero-headerText" class="Hero_headerText__1qYM9" >@appSettings .WelcomeText</span></h1>
+
+                                <span data-testid="MediaSvg" class="Hero_hexBar__1l0UJ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 24" fill="#065dba" alt="" class="Hero_hexBarSvg__3Vqjg">
+                                        <g class="gfx-hex-bar">
+                                            <polygon id="gfx-hex-bar__right" points="56.13 7.49 50.93 7.49 48.33 12 50.93 16.51 56.13 16.51 58.73 12 56.13 7.49"></polygon>
+                                            <rect id="gfx-hex-bar__bar" x="2.25" y="11.75" width="55.7" height="0.5"></rect>
+                                            <polygon id="gfx-hex-bar__left" points="9.86 7.49 4.66 7.49 2.06 12 4.66 16.51 9.86 16.51 12.46 12 9.86 7.49"></polygon>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Hero_graphicWrap__3gCeB">
+                    <div class="Hero_graphicContainer__3w2B4 container-fluid pr-0 h-100">
+                        <div class="Hero_graphicRow__1Bn9v row justify-content-end mr-0 h-100">
+                            <span data-testid="MediaSvg" class="Hero_secondaryGraphicCol__1iMkc d-block col-24 pl-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 100" width="1100" alt="" class="Hero_secondaryGraphicSvg__2aNAm">
+                                    <g class="gfx-offset-hexagons" stroke="#221f20" fill="#221f20" stroke-miterlimit="10">
+                                        <g class="gfx-offset-hexagons__background" opacity="0.5" fill="none" stroke-width="0.1">
+                                            <polygon points="35.32 0.54 28.96 0.54 25.77 6.04 28.96 11.54 35.32 11.54 38.5 6.04 35.32 0.54"></polygon>
+                                            <polygon points="63.96 17.03 57.59 17.03 54.41 22.53 57.59 28.02 63.96 28.02 67.14 22.53 63.96 17.03"></polygon>
+                                            <polygon points="83.05 28.02 76.69 28.02 73.5 33.52 76.69 39.02 83.05 39.02 86.23 33.52 83.05 28.02"></polygon>
+                                            <polygon points="35.32 11.54 28.96 11.54 25.77 17.03 28.96 22.53 35.32 22.53 38.5 17.03 35.32 11.54"></polygon>
+                                            <polygon points="44.87 17.03 38.5 17.03 35.32 22.53 38.5 28.02 44.87 28.02 48.05 22.53 44.87 17.03"></polygon>
+                                            <polygon points="63.96 28.02 57.59 28.02 54.41 33.52 57.59 39.02 63.96 39.02 67.14 33.52 63.96 28.02"></polygon>
+                                            <polygon points="73.5 33.52 67.14 33.52 63.96 39.02 67.14 44.51 73.5 44.51 76.69 39.02 73.5 33.52"></polygon>
+                                            <polygon points="16.23 11.54 9.87 11.54 6.68 17.03 9.87 22.53 16.23 22.53 19.41 17.03 16.23 11.54"></polygon>
+                                            <polygon points="25.77 17.03 19.41 17.03 16.23 22.53 19.41 28.02 25.77 28.02 28.96 22.53 25.77 17.03"></polygon>
+                                            <polygon points="44.87 28.02 38.5 28.02 35.32 33.52 38.5 39.02 44.87 39.02 48.05 33.52 44.87 28.02"></polygon>
+                                            <polygon points="54.41 33.52 48.05 33.52 44.87 39.02 48.05 44.51 54.41 44.51 57.59 39.02 54.41 33.52"></polygon>
+                                            <polygon points="54.41 44.51 48.05 44.51 44.87 50.01 48.05 55.51 54.41 55.51 57.59 50.01 54.41 44.51"></polygon>
+                                            <polygon points="63.96 50.01 57.59 50.01 54.41 55.51 57.59 61 63.96 61 67.14 55.51 63.96 50.01"></polygon>
+                                            <polygon points="83.05 61 76.69 61 73.5 66.5 76.69 72 83.05 72 86.23 66.5 83.05 61"></polygon>
+                                            <polygon points="92.6 66.5 86.23 66.5 83.05 72 86.23 77.49 92.6 77.49 95.78 72 92.6 66.5"></polygon>
+                                            <polygon points="25.77 39.02 19.41 39.02 16.23 44.51 19.41 50.01 25.77 50.01 28.96 44.51 25.77 39.02"></polygon>
+                                            <polygon points="35.32 44.51 28.96 44.51 25.77 50.01 28.96 55.51 35.32 55.51 38.5 50.01 35.32 44.51"></polygon>
+                                            <polygon points="44.87 50.01 38.5 50.01 35.32 55.51 38.5 61 44.87 61 48.05 55.51 44.87 50.01"></polygon>
+                                            <polygon points="63.96 61 57.59 61 54.41 66.5 57.59 72 63.96 72 67.14 66.5 63.96 61"></polygon>
+                                            <polygon points="73.5 66.5 67.14 66.5 63.96 72 67.14 77.49 73.5 77.49 76.69 72 73.5 66.5"></polygon>
+                                            <polygon points="16.23 44.51 9.87 44.51 6.68 50.01 9.87 55.51 16.23 55.51 19.41 50.01 16.23 44.51"></polygon>
+                                            <polygon points="44.87 61 38.5 61 35.32 66.5 38.5 72 44.87 72 48.05 66.5 44.87 61"></polygon>
+                                            <polygon points="73.5 77.49 67.14 77.49 63.96 82.99 67.14 88.48 73.5 88.48 76.69 82.99 73.5 77.49"></polygon>
+                                            <polygon points="28.96 11.54 22.59 11.54 19.41 17.03 22.59 22.53 28.96 22.53 32.14 17.03 28.96 11.54"></polygon>
+                                            <polygon points="57.59 28.02 51.23 28.02 48.05 33.52 51.23 39.02 57.59 39.02 60.78 33.52 57.59 28.02"></polygon>
+                                            <polygon points="76.69 39.02 70.32 39.02 67.14 44.51 70.32 50.01 76.69 50.01 79.87 44.51 76.69 39.02"></polygon>
+                                            <polygon points="28.96 22.53 22.59 22.53 19.41 28.02 22.59 33.52 28.96 33.52 32.14 28.02 28.96 22.53"></polygon>
+                                            <polygon points="38.5 28.02 32.14 28.02 28.96 33.52 32.14 39.02 38.5 39.02 41.69 33.52 38.5 28.02"></polygon>
+                                            <polygon points="57.59 39.02 51.23 39.02 48.05 44.51 51.23 50.01 57.59 50.01 60.78 44.51 57.59 39.02"></polygon>
+                                            <polygon points="67.14 44.51 60.78 44.51 57.59 50.01 60.78 55.51 67.14 55.51 70.32 50.01 67.14 44.51"></polygon>
+                                            <polygon points="9.87 22.53 3.5 22.53 0.32 28.02 3.5 33.52 9.87 33.52 13.05 28.02 9.87 22.53"></polygon>
+                                            <polygon points="19.41 28.02 13.05 28.02 9.87 33.52 13.05 39.02 19.41 39.02 22.59 33.52 19.41 28.02"></polygon>
+                                            <polygon points="38.5 39.02 32.14 39.02 28.96 44.51 32.14 50.01 38.5 50.01 41.69 44.51 38.5 39.02"></polygon>
+                                            <polygon points="48.05 44.51 41.69 44.51 38.5 50.01 41.69 55.51 48.05 55.51 51.23 50.01 48.05 44.51"></polygon>
+                                            <polygon points="48.05 55.51 41.69 55.51 38.5 61 41.69 66.5 48.05 66.5 51.23 61 48.05 55.51"></polygon>
+                                            <polygon points="57.59 61 51.23 61 48.05 66.5 51.23 72 57.59 72 60.78 66.5 57.59 61"></polygon>
+                                            <polygon points="76.69 72 70.32 72 67.14 77.49 70.32 82.99 76.69 82.99 79.87 77.49 76.69 72"></polygon>
+                                            <polygon points="86.23 77.49 79.87 77.49 76.69 82.99 79.87 88.48 86.23 88.48 89.42 82.99 86.23 77.49"></polygon>
+                                            <polygon points="19.41 50.01 13.05 50.01 9.87 55.51 13.05 61 19.41 61 22.59 55.51 19.41 50.01"></polygon>
+                                            <polygon points="28.96 55.51 22.59 55.51 19.41 61 22.59 66.5 28.96 66.5 32.14 61 28.96 55.51"></polygon>
+                                            <polygon points="38.5 61 32.14 61 28.96 66.5 32.14 72 38.5 72 41.69 66.5 38.5 61"></polygon>
+                                            <polygon points="57.59 72 51.23 72 48.05 77.49 51.23 82.99 57.59 82.99 60.78 77.49 57.59 72"></polygon>
+                                            <polygon points="67.14 77.49 60.78 77.49 57.59 82.99 60.78 88.48 67.14 88.48 70.32 82.99 67.14 77.49"></polygon>
+                                            <polygon points="9.87 55.51 3.5 55.51 0.32 61 3.5 66.5 9.87 66.5 13.05 61 9.87 55.51"></polygon>
+                                            <polygon points="38.5 72 32.14 72 28.96 77.49 32.14 82.99 38.5 82.99 41.69 77.49 38.5 72"></polygon>
+                                            <polygon points="67.14 88.48 60.78 88.48 57.59 93.98 60.78 99.48 67.14 99.48 70.32 93.98 67.14 88.48"></polygon>
+                                        </g>
+                                        <g class="gfx-offset-hexagons__foreground" fill="none" stroke-width="0.125">
+                                            <polygon points="32.14 6.04 25.77 6.04 22.59 11.54 25.77 17.03 32.14 17.03 35.32 11.54 32.14 6.04"></polygon>
+                                            <polygon points="60.78 22.53 54.41 22.53 51.23 28.02 54.41 33.52 60.78 33.52 63.96 28.02 60.78 22.53"></polygon>
+                                            <polygon points="79.87 33.52 73.5 33.52 70.32 39.02 73.5 44.51 79.87 44.51 83.05 39.02 79.87 33.52"></polygon>
+                                            <polygon points="32.14 17.03 25.77 17.03 22.59 22.53 25.77 28.02 32.14 28.02 35.32 22.53 32.14 17.03"></polygon>
+                                            <polygon points="41.69 22.53 35.32 22.53 32.14 28.02 35.32 33.52 41.69 33.52 44.87 28.02 41.69 22.53"></polygon>
+                                            <polygon points="60.78 33.52 54.41 33.52 51.23 39.02 54.41 44.51 60.78 44.51 63.96 39.02 60.78 33.52"></polygon>
+                                            <polygon points="70.32 39.02 63.96 39.02 60.78 44.51 63.96 50.01 70.32 50.01 73.5 44.51 70.32 39.02"></polygon>
+                                            <polygon points="13.05 17.03 6.68 17.03 3.5 22.53 6.68 28.02 13.05 28.02 16.23 22.53 13.05 17.03"></polygon>
+                                            <polygon points="22.59 22.53 16.23 22.53 13.05 28.02 16.23 33.52 22.59 33.52 25.77 28.02 22.59 22.53"></polygon>
+                                            <polygon points="41.69 33.52 35.32 33.52 32.14 39.02 35.32 44.51 41.69 44.51 44.87 39.02 41.69 33.52"></polygon>
+                                            <polygon points="51.23 39.02 44.87 39.02 41.69 44.51 44.87 50.01 51.23 50.01 54.41 44.51 51.23 39.02"></polygon>
+                                            <polygon points="51.23 50.01 44.87 50.01 41.69 55.51 44.87 61 51.23 61 54.41 55.51 51.23 50.01"></polygon>
+                                            <polygon points="60.78 55.51 54.41 55.51 51.23 61 54.41 66.5 60.78 66.5 63.96 61 60.78 55.51"></polygon>
+                                            <polygon points="79.87 66.5 73.5 66.5 70.32 72 73.5 77.49 79.87 77.49 83.05 72 79.87 66.5"></polygon>
+                                            <polygon points="89.42 72 83.05 72 79.87 77.49 83.05 82.99 89.42 82.99 92.6 77.49 89.42 72"></polygon>
+                                            <polygon points="22.59 44.51 16.23 44.51 13.05 50.01 16.23 55.51 22.59 55.51 25.77 50.01 22.59 44.51"></polygon>
+                                            <polygon points="32.14 50.01 25.77 50.01 22.59 55.51 25.77 61 32.14 61 35.32 55.51 32.14 50.01"></polygon>
+                                            <polygon points="41.69 55.51 35.32 55.51 32.14 61 35.32 66.5 41.69 66.5 44.87 61 41.69 55.51"></polygon>
+                                            <polygon points="60.78 66.5 54.41 66.5 51.23 72 54.41 77.49 60.78 77.49 63.96 72 60.78 66.5"></polygon>
+                                            <polygon points="70.32 72 63.96 72 60.78 77.49 63.96 82.99 70.32 82.99 73.5 77.49 70.32 72"></polygon>
+                                            <polygon points="13.05 50.01 6.68 50.01 3.5 55.51 6.68 61 13.05 61 16.23 55.51 13.05 50.01"></polygon>
+                                            <polygon points="41.69 66.5 35.32 66.5 32.14 72 35.32 77.49 41.69 77.49 44.87 72 41.69 66.5"></polygon>
+                                            <polygon points="70.32 82.99 63.96 82.99 60.78 88.48 63.96 93.98 70.32 93.98 73.5 88.48 70.32 82.99"></polygon>
+                                        </g>
+                                        <g class="gfx-offset-hexagons__dots" stroke-width="0">
+                                            <circle cx="25.77" cy="6.04" r="0.25"></circle>
+                                            <circle cx="32.14" cy="17.03" r="0.25"></circle>
+                                            <circle cx="22.59" cy="22.53" r="0.25"></circle>
+                                            <circle cx="6.68" cy="17.03" r="0.25"></circle>
+                                            <circle cx="13.05" cy="28.03" r="0.25"></circle>
+                                            <circle cx="16.23" cy="44.51" r="0.25"></circle>
+                                            <circle cx="3.5" cy="55.51" r="0.25"></circle>
+                                            <circle cx="13.05" cy="61" r="0.25"></circle>
+                                            <circle cx="22.59" cy="55.51" r="0.25"></circle>
+                                            <circle cx="32.14" cy="50.01" r="0.25"></circle>
+                                            <circle cx="41.68" cy="44.51" r="0.25"></circle>
+                                            <circle cx="51.23" cy="50.01" r="0.25"></circle>
+                                            <circle cx="60.78" cy="44.51" r="0.25"></circle>
+                                            <circle cx="70.32" cy="50.01" r="0.25"></circle>
+                                            <circle cx="73.51" cy="33.52" r="0.25"></circle>
+                                            <circle cx="79.93" cy="44.51" r="0.25"></circle>
+                                            <circle cx="54.41" cy="33.52" r="0.25"></circle>
+                                            <circle cx="54.41" cy="22.53" r="0.25"></circle>
+                                            <circle cx="63.96" cy="28.03" r="0.25"></circle>
+                                            <circle cx="41.68" cy="33.52" r="0.25"></circle>
+                                            <circle cx="41.68" cy="22.53" r="0.25"></circle>
+                                            <circle cx="32.14" cy="61" r="0.25"></circle>
+                                            <circle cx="44.87" cy="61" r="0.25"></circle>
+                                            <circle cx="54.41" cy="55.51" r="0.25"></circle>
+                                            <circle cx="63.96" cy="61" r="0.25"></circle>
+                                            <circle cx="60.78" cy="77.49" r="0.25"></circle>
+                                            <circle cx="73.51" cy="66.5" r="0.25"></circle>
+                                            <circle cx="79.87" cy="77.49" r="0.25"></circle>
+                                            <circle cx="92.6" cy="77.49" r="0.25"></circle>
+                                            <circle cx="70.32" cy="82.99" r="0.25"></circle>
+                                            <circle cx="63.96" cy="93.98" r="0.25"></circle>
+                                            <circle cx="54.41" cy="66.5" r="0.25"></circle>
+                                            <circle cx="35.32" cy="77.49" r="0.25"></circle>
+                                            <circle cx="44.87" cy="72" r="0.25"></circle>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </span>
+                            <span data-testid="MediaSvg" class="Hero_mainGraphicCol__3RJgV d-flex pr-0 p-absolute">
+                                <svg class="Hero_mainGraphicSvg__2KQIW" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306 206" preserveAspectRatio="xMidYMin slice" alt="">
+                                    <g class="gfx-hero--generic gfx-hero">
+                                        <polygon points="109.52 0.04 140.7 54.04 142.7 50.58 142.7 54.04 306 54.04 306 0.04 109.52 0.04" fill="#e2f7fa"></polygon>
+                                        <polygon points="306 54.04 140.7 54.04 -72.26 422.9 306 422.9 306 54.04" fill="#ee2842"></polygon>
+                                        <path d="M306,148H210a89.82,89.82,0,0,0-77.76,44.9L0,422H306Z" fill="#c5050c"></path>
+                                        <path d="M306,200H260.4a67.67,67.67,0,0,0-58.62,33.85l-108,187H306Z" fill="#ee2842"></path>
+                                        <polygon points="306 0 171.9 0 140.7 54.04 171.9 108.08 306 108.08 306 54.04 306 0" fill="#065dba"></polygon>
+                                        <path d="M206.16,167.43a18,18,0,0,0,15.54,9H306V54H140.7Z" fill="#001964"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <!-- @Body       -->
+    <!-- </div>
+</div> -->
+<!-- @page "/"
+@using DonorWall.Data.Models
+@using DonorWall.Data.Interfaces
+@using DonorWall.Lookup.Extensions
+@using DonorWall.Lookup.ViewModels
+@using Microsoft.AspNetCore.Html
+
+@inject IDonorRequestService DonorRequestService -->
+<main class="body">
+<!-- <EditForm Model="@Model" OnValidSubmit="@HandleValidSubmit" class="SearchKeyword_searchForm__3w8P0 container position-relative px-0 SearchKeyword_hasInfoText__1QZUj">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -23,7 +223,16 @@
         <InputText id="Lastname" @bind-Value="Model.Lastname" class="form-control" tabindex="2" />
     </div>
     <button type="submit" class="btn btn-primary" tabindex="3">Search</button>
-</EditForm>
+</EditForm>-->
+<form class="SearchKeyword_searchForm__3w8P0 container position-relative px-0 SearchKeyword_hasInfoText__1QZUj">
+    <!--!--><!--!-->
+    <ul class="validation-errors"><li class="validation-message">The Firstname field is required.</li><li class="validation-message">Another thing</li></ul>
+    <div class="form-input" b-4xg074dpd2=""><label for="Firstname" class="form-label" b-4xg074dpd2="">First Name</label>
+      <input id="Firstname" tabindex="1" class="form-control valid" _bl_d065c7b3-854e-42b4-9c81-c7053e9be65a=""></div>
+  <div class="form-input" b-4xg074dpd2=""><label for="Lastname" class="form-label" b-4xg074dpd2="">Last Name</label>
+      <input id="Lastname" tabindex="2" class="form-control valid" _bl_2d78dbfc-e0c2-44f8-a188-7baa503e52ee=""></div>
+  <button type="submit" class="btn btn-primary" tabindex="3" b-4xg074dpd2="">Search</button>
+</form>
 <!-- @if (Donors != null && Donors.Any())
 {
     var index = 1; -->
@@ -39,7 +248,7 @@
         <div class="mb-2">Result Count: @Donors.Count()</div>
         <div>
             <table class="table table-bordered" style="z-index: 99999;">
-                <tr>
+                <tr class="header">
                     <th style="width: 5em;">#</th>
                     <th>Last Name</th>
                     <th>First Name</th>
@@ -50,13 +259,21 @@
                 <!-- @foreach (var donor in Donors.OrderBy(x => x.Lastname).ThenBy(x => x.Firstname).ThenBy(x => x.TxpDate))
                 { -->
                     <tr>
-                        <td>@index</td>
-                        <td>@donor.Lastname.ToEmbeddedHighlightString(Model.Lastname)</td>
-                        <td>@donor.Firstname.ToEmbeddedHighlightString(Model.Firstname)</td>
-                        <td>@donor.Organ</td>
-                        <td>@donor.TxpDate.ToShortDateString()</td>
-                        <td><input type="button" class="btn btn-primary" @onclick="@(e => SelectDonor(donor))" value="Request" /></td>
+                        <td class="table-index">@index</td>
+                        <td class="table-firstname">@donor.Firstname.ToEmbeddedHighlightString(Model.Firstname)</td>
+                        <td class="table-lastname">@donor.Lastname.ToEmbeddedHighlightString(Model.Lastname)</td>
+                        <td class="table-organ">@donor.Organ</td>
+                        <td class="table-date">@donor.TxpDate.ToShortDateString()</td>
+                        <td class="table-action"><input type="button" class="btn btn-primary" @onclick="@(e => SelectDonor(donor))" value="Request" /></td>
                     </tr>
+                    <tr>
+                      <td class="table-index">2</td>
+                      <td class="table-firstname">Christopher</td>
+                      <td class="table-lastname">HansonLee</td>
+                      <td class="table-organ">Kidney</td>
+                      <td class="table-date">09/21/1900</td>
+                      <td class="table-action"><input type="button" class="btn btn-primary" @onclick="@(e => SelectDonor(donor))" value="Request" /></td>
+                  </tr>
 <!--
                     index++;
                 } -->
@@ -66,7 +283,7 @@
 <!-- }
 else
 { -->
-    <section id="TW0j26c9iGNZvB1ewG6Y3" class="ls SectionGeneral_ls__1T3bE">
+    <section id="TW0j26c9iGNZvB1ewG6Y3" class="ls SectionGeneral_ls__1T3bE table-wrapper">
          <h2 class="ls-header SectionIntro_headerText__24TpD">Search Results</h2>
           <table class="table table-bordered">
              <tr>
@@ -82,7 +299,7 @@ else
          </table>
     </section>
 <!-- } -->
-
+  </main>
     <div class="modal fade @modalActiveClass" id="exampleModalLive" aria-labelledby="exampleModalLiveLabel" style="display: block;" aria-modal="true" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -108,6 +325,5 @@ else
         </div>
     </div>
     <div class="modal-backdrop fade @modalActiveClass"></div>
-
-</body>
-</html>
+</div>
+</body></html>
