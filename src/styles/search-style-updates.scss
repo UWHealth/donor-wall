@@ -130,7 +130,7 @@
         word-break: break-all;
       }
 
-      .header { display: none;}
+      .table-header { display: none;}
 
       tr + tr {
         display: flex;
@@ -189,6 +189,8 @@
 
         .btn {
           width: 100%;
+          font-weight: bold;
+          min-height: 3.5rem;
         }
       }
     }

@@ -28,7 +28,7 @@
       <input id="Firstname" tabindex="1" class="form-control valid" _bl_d065c7b3-854e-42b4-9c81-c7053e9be65a=""></div>
   <div class="form-input" b-4xg074dpd2=""><label for="Lastname" class="form-label" b-4xg074dpd2="">Last Name</label>
       <input id="Lastname" tabindex="2" class="form-control valid" _bl_2d78dbfc-e0c2-44f8-a188-7baa503e52ee=""></div>
-  <button type="submit" class="btn btn-primary" tabindex="3" b-4xg074dpd2="">Search</button>
+  <button type="submit" class="btn btn-bright" tabindex="3" b-4xg074dpd2="">Search</button>
 </form>
 <!-- @if (Donors != null && Donors.Any())
 {
@@ -45,7 +45,7 @@
         <div class="mb-2">Result Count: @Donors.Count()</div>
         <div>
             <table class="table table-bordered" style="z-index: 99999;">
-                <tr class="header">
+                <tr class="table-header">
                     <th style="width: 5em;">#</th>
                     <th>Last Name</th>
                     <th>First Name</th>
@@ -61,7 +61,7 @@
                         <td class="table-lastname">@donor.Lastname.ToEmbeddedHighlightString(Model.Lastname)</td>
                         <td class="table-organ">@donor.Organ</td>
                         <td class="table-date">@donor.TxpDate.ToShortDateString()</td>
-                        <td class="table-action"><input type="button" class="btn btn-primary" @onclick="@(e => SelectDonor(donor))" value="Request" /></td>
+                        <td class="table-action"><input type="button" class="btn btn-primary" @onclick="@(e => SelectDonor(donor))" value="Feature @donor.Firstname on wall" /></td>
                     </tr>
                     <tr>
                       <td class="table-index">2</td>
@@ -69,7 +69,7 @@
                       <td class="table-lastname">HansonLee</td>
                       <td class="table-organ">Kidney</td>
                       <td class="table-date">09/21/1900</td>
-                      <td class="table-action"><input type="button" class="btn btn-primary" @onclick="@(e => SelectDonor(donor))" value="Request" /></td>
+                      <td class="table-action"><input type="button" class="btn btn-primary" @onclick="@(e => SelectDonor(donor))" value="Feature Christopher on wall" /></td>
                   </tr>
 <!--
                     index++;
@@ -83,15 +83,15 @@ else
     <section id="TW0j26c9iGNZvB1ewG6Y3" class="ls SectionGeneral_ls__1T3bE table-wrapper">
          <h2 class="ls-header SectionIntro_headerText__24TpD">Search Results</h2>
           <table class="table table-bordered">
-             <tr>
+             <tr class="table-header">
                  <th style="width: 5em;">#</th>
                  <th>Last Name</th>
                  <th>First Name</th>
                  <th>Organ</th>
                  <th>Transplant Date</th>
              </tr>
-            <tr>
-                <td colspan="5">No Search Results</td>
+            <tr class="no-results">
+                <td colspan="5">Cannot find any donors by that name. Please try again.</td>
             </tr>
          </table>
     </section>
