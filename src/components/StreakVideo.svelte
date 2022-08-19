@@ -7,14 +7,20 @@
   let classes ='';
   export {classes as class};
 
+  let autoplay;
+
+  $: {
+    autoplay = !paused;
+  }
   /**
    * Ensures video always plays (in case chrome decides not to)
    * @param node
    */
   function playVideo(node) {
-    if (node.paused && !paused) {
-      try { node.play(); }catch(e){console.log(e)};
-    }
+    console.log({paused})
+    // if (node.paused && paused !== false) {
+    //   try { node.play(); }catch(e){console.log(e)};
+    // }
   }
 
 </script>
@@ -34,7 +40,7 @@
       playsinline
       playbackRate={1}
       loop
-      autoplay={!paused}
+      {autoplay}
       muted
       width=1440
       height=2560
