@@ -59,8 +59,8 @@
   }
 
   .root :global(.graphic--animation) {
-    animation: fade-grow-in 25s 1 both normal ease-out;
-    animation-delay: 2s;
+    animation: fade-grow-in 20s 1 both normal ease-out;
+    animation-delay: 3.5s;
     filter: drop-shadow(0 2px 5px rgba(navy, .15));
   }
 
