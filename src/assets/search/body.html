@@ -23,12 +23,18 @@
 </EditForm>-->
 <form class="SearchKeyword_searchForm__3w8P0 container position-relative px-0 SearchKeyword_hasInfoText__1QZUj">
     <!--!--><!--!-->
+    <div class="information">
+      <div class="information__icon"><img class="icon_info" src="/src/assets/icon_info.svg"/></div>
+      <div class="information__content">Search our donor database and display a donor's name on the clinic wall.</div>
+    </div>
+
     <ul class="validation-errors"><li class="validation-message">The Firstname field is required.</li><li class="validation-message">Another thing</li></ul>
+
     <div class="form-input" b-4xg074dpd2=""><label for="Firstname" class="form-label" b-4xg074dpd2="">First Name</label>
       <input id="Firstname" tabindex="1" class="form-control valid" _bl_d065c7b3-854e-42b4-9c81-c7053e9be65a=""></div>
   <div class="form-input" b-4xg074dpd2=""><label for="Lastname" class="form-label" b-4xg074dpd2="">Last Name</label>
       <input id="Lastname" tabindex="2" class="form-control valid" _bl_2d78dbfc-e0c2-44f8-a188-7baa503e52ee=""></div>
-  <button type="submit" class="btn btn-bright" tabindex="3" b-4xg074dpd2="">Search</button>
+  <button type="submit" class="btn btn-primary" tabindex="3" b-4xg074dpd2="">Search</button>
 </form>
 <!-- @if (Donors != null && Donors.Any())
 {
@@ -97,28 +103,44 @@ else
     </section>
 <!-- } -->
   </main>
-    <div class="modal fade @modalActiveClass" id="exampleModalLive" aria-labelledby="exampleModalLiveLabel" style="display: block;" aria-modal="true" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Request Donor</h5>
-                </div>
-                <div class="modal-body">
-                    <p>Would you like to request the following donor be queued for display on the donor wall?</p>
-                    <label>First Name:</label>
-                    <div>@SelectedDonor?.Firstname</div>
-                    <label>Last Name:</label>
-                    <div>@SelectedDonor?.Lastname</div>
-                    <label>Organ:</label>
-                    <div>@SelectedDonor?.Organ</div>
-                    <label>Transplant Date:</label>
-                    <div>@SelectedDonor?.TxpDate</div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" @onclick="ResetDonor" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" @onclick="RequestDonor" class="btn btn-success" data-bs-dismiss="modal">Request Donor</button>
-                </div>
-            </div>
-        </div>
+  <footer class="px-1">
+    <div class="row">
+      <div class="col-8 sm-col-12 align-items-center">
+        <a href="https://uwhealth.org" class="pl-1">
+          <img alt="UW Health Logo" src="//images.ctfassets.net/4yx69hifndy8/9CbsRSi2AJ5xqfEK3T7Dn/b500356767c466aee7c18f8edba48687/gfx_uwhealth-logo.svg" class="GlobalHeader_imgLogo__2k0M0">
+        </a>
+      </div>
+      <div class="col-16 sm-col-12 align-items-center">
+        <ul class="list-unstyled">
+          <li><a href="https://www.uwhealth.org/services/transplant-service">Transplant Services</a></li>
+          <li><a href="https://www.uwhealth.org/services/organ-tissue-donation">Organ and tissue donation</a></li>
+          <li><a class="btn btn-primary" href="https://www.wiscmedicine.org/transplant">Support us</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="modal-backdrop fade @modalActiveClass"></div>
+  </footer>
+  <div class="modal fade @modalActiveClass" id="exampleModalLive" aria-labelledby="exampleModalLiveLabel" style="display: block;" aria-modal="true" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">Request Donor</h5>
+              </div>
+              <div class="modal-body">
+                  <p>Would you like to request the following donor be queued for display on the donor wall?</p>
+                  <label>First Name:</label>
+                  <div>@SelectedDonor?.Firstname</div>
+                  <label>Last Name:</label>
+                  <div>@SelectedDonor?.Lastname</div>
+                  <label>Organ:</label>
+                  <div>@SelectedDonor?.Organ</div>
+                  <label>Transplant Date:</label>
+                  <div>@SelectedDonor?.TxpDate</div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" @onclick="ResetDonor" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                  <button type="button" @onclick="RequestDonor" class="btn btn-success" data-bs-dismiss="modal">Request Donor</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="modal-backdrop fade @modalActiveClass"></div>

@@ -28,7 +28,6 @@
     state.set({ firstName, lastName, year, paused });
     window.SET_STATE = state.set;
     window.GET_STATE = state.get;
-    window.COLORS = colors.get;
 
     return ()=> {}
   });
