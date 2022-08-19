@@ -3,6 +3,7 @@
 
   export let topColor = "blue";
   export let bottomColor = "green";
+  export let paused = false;
   let classes ='';
   export {classes as class};
 
@@ -11,14 +12,14 @@
    * @param node
    */
   function playVideo(node) {
-    if (node.paused) {
-      try { node.play(); }catch(e){};
+    if (node.paused && !paused) {
+      try { node.play(); }catch(e){console.log(e)};
     }
   }
 
 </script>
 
-<section class={`container ${classes}`} style:--color-2={bottomColor} style:--color-1={topColor}>
+<section class={`container ${classes}`} style={`--color-1:${topColor};--color-2:${bottomColor};`}>
   <div class="bg">
 
     <div class="content">
@@ -33,7 +34,7 @@
       playsinline
       playbackRate={1}
       loop
-      autoplay
+      autoplay={!paused}
       muted
       width=1440
       height=2560
@@ -89,7 +90,6 @@
     grid-column: 1/1;
     display: block;
     height: 100%;
-    transform: translateZ(0);
 
     filter: opacity(0.9);
     background-image:

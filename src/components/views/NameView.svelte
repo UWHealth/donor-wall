@@ -10,6 +10,8 @@
   export let lastName;
   export let year;
 
+  let paused = false;
+
   function cycleColors(node) {
     const animation = animateColors({el: node, offset: 1});
     window.ANIMATION = animation;
@@ -19,10 +21,11 @@
     firstName = $state.firstName || firstName;
     lastName = $state.lastName || lastName;
     year = $state.year || year;
+    paused = $state.paused || paused;
   }
 
   onMount(()=> {
-    state.set({ firstName, lastName, year });
+    state.set({ firstName, lastName, year, paused });
     window.SET_STATE = state.set;
     window.GET_STATE = state.get;
     window.COLORS = colors.get;
@@ -32,7 +35,7 @@
 </script>
 
 <div class="root" use:cycleColors>
-  <StreakVideo class="streak-container" topColor="var(--top-color)" bottomColor="var(--bottom-color)">
+  <StreakVideo class="streak-container" topColor="var(--top-color)" bottomColor="var(--bottom-color)" {paused}>
     <NameCircle
       class="graphic--animation"
       lightColor="var(--top-color)"
