@@ -89,6 +89,7 @@
     grid-column: 1/1;
     display: block;
     height: 100%;
+    transform: translateZ(0);
 
     filter: opacity(0.9);
     background-image:
@@ -99,8 +100,13 @@
 
     background-position: 50% 0, 50% 55%, 0;
     background-size: 200% 60%, 100% 50%, 100%;
+    // background-position:  50% 55%, 0;
+    // background-size: 100% 50%, 100%;
 
-    animation: bg-size 90s ease-out both alternate infinite;
+    // animation: bg-size 90s ease-out both alternate infinite;
+
+    // animation: bg-size-1 90s ease-out both alternate infinite;
+
     transition: background 100ms ease-out;
   }
 
