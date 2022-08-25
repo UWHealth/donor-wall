@@ -35,6 +35,7 @@ jobs:
           echo CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }} >> .env
           echo CONTENTFUL_CONTENT_TYPE=${{ secrets.CONTENTFUL_CONTENT_TYPE }} >> .env
           echo CONTENT_OUT_PATH=${{ secrets.CONTENT_OUT_PATH }} >> .env
+          echo SEARCH_APP_URL=${{ secrets.SEARCH_APP_URL }} >> .env
 
       - name: Install dependencies
         run: npm ci
@@ -45,6 +46,7 @@ jobs:
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           CONTENTFUL_CONTENT_TYPE: ${{ secrets.CONTENTFUL_CONTENT_TYPE }}
           CONTENT_OUT_PATH: ${{ secrets.CONTENT_OUT_PATH }}
+          SEARCH_APP_URL: ${{ secrets.SEARCH_APP_URL }}
 
 
       - name: Build Site
