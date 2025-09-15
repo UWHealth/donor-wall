@@ -1,5 +1,6 @@
 <script>
-  import streaksVideo from '$assets/streaks-bg-bw.mp4?url'
+  import streaksVideo from '$assets/streaks-bg-bw.mp4?url';
+  import transplantLogoWhiteHoriz from '$assets/logo_uwh_transplant_center_white_horiz.webp';
 
   export let topColor = "blue";
   export let bottomColor = "green";
@@ -27,9 +28,11 @@
 
 <section class={`container ${classes}`} style={`--color-1:${topColor};--color-2:${bottomColor};`}>
   <div class="bg">
-
     <div class="content">
-      <slot/>
+      <div class="logo-slot-col">
+        <img class="logo__transplant" alt="UWH Transplant Center" src={transplantLogoWhiteHoriz} />
+        <slot/>
+      </div>
     </div>
      <!-- svelte-ignore a11y-media-has-caption -->
     <video use:playVideo class="video"
@@ -46,7 +49,6 @@
       height=2560
     />
   </div>
-
 </section>
 
 <style lang="scss">
@@ -123,6 +125,17 @@
     grid-column: 1/1;
     width: 100%;
     height: 100%;
+  }
+
+  .logo-slot-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo__transplant {
+    max-width: 100%;
+    margin-bottom: 20px;
   }
 
   @keyframes bg-size {
