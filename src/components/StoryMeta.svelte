@@ -1,6 +1,6 @@
 <script>
   import NameCircle from "./NameCircle.svelte";
-  import {onMount} from 'svelte';
+  import transplantLogoColorHoriz from '$assets/logo_uwh_transplant_center_color_horiz.webp';
 
   export let title = '';
   export let firstName = '';
@@ -36,6 +36,7 @@
       <slot name="date">{#if date}{date}{/if}</slot>
     </div>
 
+    <img class="logo__transplant" alt="UWH Transplant Center" src={transplantLogoColorHoriz} />
   </div>
 </section>
 
@@ -100,4 +101,10 @@
     color: #858d8f;
   }
 
+  .logo__transplant {
+    display: block;
+    margin: 32px auto 0 auto;
+    width: 100%;
+    height: auto;
+  }
 </style>
