@@ -4,6 +4,7 @@
 
   import NameCircle from '$components/NameCircle.svelte';
   import StreakVideo from '$components/StreakVideo.svelte';
+  import Logo from '$components/Logo.svelte';
   import {animateColors} from "$components/utils/colors.js";
 
   export let firstName;
@@ -35,7 +36,9 @@
 
 <div class="root" use:cycleColors>
   <StreakVideo class="streak-container" topColor="var(--top-color)" bottomColor="var(--bottom-color)" {paused}>
-    <NameCircle
+    <div>
+      <Logo class="graphic--animation" />
+      <NameCircle
       class="graphic--animation"
       lightColor="var(--top-color)"
       fillColor="var(--bottom-color)"
@@ -43,6 +46,7 @@
       lastName={lastName}
       year={year}
     />
+    </div>
   </StreakVideo>
 </div>
 
